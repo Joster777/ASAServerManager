@@ -2493,7 +2493,11 @@ public class SMWindow extends JFrame implements Runnable {
 		
 		// 構造物を設置した後の拾えなくなるまでの秒数
 		structurePickupTimeAfterPlacementTF = new JTextField( 10 );
-		Panel structurePickupTimeAfterPlacementPanel = new Panel( structurePickupTimeAfterPlacementTF, "<html>構造物を設置したときに拾えなくなるまでの時間(秒)<br>今は常に拾える用になっているからいらない</html>" );
+		Panel structurePickupTimeAfterPlacementPanel = new Panel( 
+				structurePickupTimeAfterPlacementTF, 
+				"<html>構造物を設置したときに拾えなくなるまでの時間(秒)<br>今は常に拾える用になっているからいらない</html>",
+				new double[] { 0.7, 0.3 }
+		);
 		
 		// 構造物を拾うのにかかる時間
 		structurePickupHoldDurationTF = new JTextField( 10 );
@@ -2507,16 +2511,28 @@ public class SMWindow extends JFrame implements Runnable {
 		Panel ignoreLimitMaxStructuresInRangeTypeFlagPanel = new Panel( ignoreLimitMaxStructuresInRangeTypeFlagCB, false );
 		
 		platformSaddleBuildAreaBoundsMultiplierTF = new JTextField( 10 );
-		Panel platformSaddleBuildAreaBoundsMultiplierPanel = new Panel( platformSaddleBuildAreaBoundsMultiplierTF, "プラットフォーム上での建築可能範囲の設定" );
+		Panel platformSaddleBuildAreaBoundsMultiplierPanel = new Panel( 
+				platformSaddleBuildAreaBoundsMultiplierTF, 
+				"プラットフォーム上での建築可能範囲の設定",
+				new double[] { 0.7, 0.3 } 
+		);
 		
 		maxGateFrameOnSaddlesTF = new JTextField( 10 );
-		Panel maxGateFrameOnSaddlesPanel = new Panel( maxGateFrameOnSaddlesTF, "プラットフォームサドル上に設置できる恐竜ゲートの数の設定" );
+		Panel maxGateFrameOnSaddlesPanel = new Panel( 
+				maxGateFrameOnSaddlesTF, 
+				"<html>プラットフォームサドル上に<br>設置できる恐竜ゲートの数の設定</html>",
+				new double[] { 0.7, 0.3}
+		);
 		
 		allowCrateSpawnsOnTopOfStructuresCB = new JCheckBox("構造物の上でのクレート召喚の許可");
 		Panel allowCrateSpawnsOnTopOfStructuresPanel = new Panel( allowCrateSpawnsOnTopOfStructuresCB, false );
 		
 		theMaxStructuresInRangeTF = new JTextField( 10 );
-		Panel theMaxStructuresInRangePanel = new Panel( theMaxStructuresInRangeTF, "特定の範囲内で建築できる建造物の最大数" );
+		Panel theMaxStructuresInRangePanel = new Panel( 
+				theMaxStructuresInRangeTF, 
+				"特定の範囲内で建築できる建造物の最大数",
+				new double[] { 0.7, 0.3 }
+		);
 		
 		forceAllStructureLockingCB = new JCheckBox( "デフォルトですべての建築物がロックされる設定" );
 		Panel forceAllStructureLockingPanel = new Panel( forceAllStructureLockingCB, false );
@@ -2537,19 +2553,22 @@ public class SMWindow extends JFrame implements Runnable {
 		Panel alwaysAllowStructurePickupPanel = new Panel( alwaysAllowStructurePickupCB, false );
 		
 		personalTamedDinosSaddleStructureCostTF = new JTextField( 10 );
-		Panel personalTamedDinosSaddleStructureCostPanel = new Panel( personalTamedDinosSaddleStructureCostTF, "プラットフォームサドルに建築した恐竜の数？" );
+		Panel personalTamedDinosSaddleStructureCostPanel = new Panel( 
+				personalTamedDinosSaddleStructureCostTF, 
+				"プラットフォームサドルに建築した恐竜の数？",
+				new double[] { 0.7, 0.3 }
+		);
 		
 		// 構造物関係
 		JPanel structurePanel = new Panel( 
 				"建築関係", 
 				17, 
 				Panel.CREAM, 
-				new int[] { 9, 2 },
+				new int[] { 8, 2 },
 				new int[] { windowSize[0] - 200, 300 }, 
 				new int[] { 1, 1, 0, 1 }, 
 				new Component[] { 
 						alwaysAllowStructurePickupPanel,
-						new Panel( Panel.CREAM ),
 						structurePickupTimeAfterPlacementPanel,
 						structurePickupHoldDurationPanel,
 						allowIntegratedSPlusStructuresPanel,
@@ -2560,7 +2579,6 @@ public class SMWindow extends JFrame implements Runnable {
 						theMaxStructuresInRangePanel,
 						allowCrateSpawnsOnTopOfStructuresPanel,
 						forceAllStructureLockingPanel,
-						new Panel( Panel.CREAM ),
 						onlyAutoDestroyCoreStructuresPanel,
 						onlyDecayUnsnappedCoreStructuresPanel,
 						fastDecayUnsnappedCoreStructuresPanel,
@@ -2646,7 +2664,7 @@ public class SMWindow extends JFrame implements Runnable {
 		Panel maxPlayersPanel = new Panel( maxPlayersTF, "サーバー最大人数" );
 		
 		showMapPlayerLocationCB = new JCheckBox( "プレイヤーの位置をマップに表示" );
-		Panel showMapPlayerLocationPanel = new Panel( showMapPlayerLocationCB, true );
+		Panel showMapPlayerLocationPanel = new Panel( showMapPlayerLocationCB, false );
 		
 		itemStackSizeMultiplierTF = new JTextField( 10 );
 		Panel itemStackSizeMultiplierPanel = new Panel( itemStackSizeMultiplierTF, "アイテムのスタック数の倍率" );
@@ -2667,12 +2685,16 @@ public class SMWindow extends JFrame implements Runnable {
 		Panel dontAlwaysNotifyPlayerJoinedPanel = new Panel( dontAlwaysNotifyPlayerJoinedCB, false );
 		
 		implantSuicideCDTF = new JTextField( 10 );
-		Panel implantSuicideCDPanel = new Panel( implantSuicideCDTF, "インプラント自滅のクールダウンの時間" );
+		Panel implantSuicideCDPanel = new Panel( 
+				implantSuicideCDTF,
+				"インプラント自滅のクールダウンの時間",
+				new double[] { 0.7, 0.3 }
+		);
 		
 		kickIdlePlayersPeriodTF = new JTextField( 10 );
-		Panel kickIdlePlayersPeriodPanel = new Panel( kickIdlePlayersPeriodTF, "未操作プレイヤーを蹴るまでの時間(全ロス対策)(秒)" );
+		Panel kickIdlePlayersPeriodPanel = new Panel( kickIdlePlayersPeriodTF, "<html>未操作プレイヤーを蹴るまでの時間(秒)<br>(全ロス対策)</html>" );
 		
-		useOptimizedHarvestingHealthCB = new JCheckBox( "レア度の低いアイテムが出やすくなって\nレア度の高いアイテムが出にくくなる設定" );
+		useOptimizedHarvestingHealthCB = new JCheckBox( "<html>レア度の低いアイテムが出やすくなって<br>レア度の高いアイテムが出にくくなる設定</html>" );
 		Panel useOptimizedHarvestingHealthPanel = new Panel( useOptimizedHarvestingHealthCB, false );
 		
 		clampResourceHarvestDamageCB = new JCheckBox( "ダメージ量に応じて資源の獲得量の変更許可" );
@@ -2685,7 +2707,7 @@ public class SMWindow extends JFrame implements Runnable {
 		Panel disableWeatherFogPanel = new Panel( disableWeatherFogCB, false );
 		
 		maxHexagonsPerCharacterTF = new JTextField( 10 );
-		Panel maxHexagonsPerCharacterPanel = new Panel( maxHexagonsPerCharacterTF, "1キャラクターあたりのヘキサゴンの最大所持数" );
+		Panel maxHexagonsPerCharacterPanel = new Panel( maxHexagonsPerCharacterTF, "<html>1キャラクターあたりの<br>ヘキサゴンの最大所持数</html>" );
 		
 		useFjordurTraversalBuffCB = new JCheckBox( "フィヨルドでのテレポート許可" );
 		Panel useFjordurTraversalBuffPanel = new Panel( useFjordurTraversalBuffCB, false );
@@ -2697,7 +2719,11 @@ public class SMWindow extends JFrame implements Runnable {
 		Panel preventSpawnAnimationsPanel = new Panel( preventSpawnAnimationsCB, false );
 		
 		spectatorPasswordTF = new JTextField( 10 );
-		Panel spectatorPasswordPanel = new Panel( spectatorPasswordTF, "スペクテイターモードになるためのパスワード" );
+		Panel spectatorPasswordPanel = new Panel( 
+				spectatorPasswordTF, 
+				"スペクテイターモードになるためのパスワード",
+				new double[] { 0.7, 0.3 }
+		);
 		
 		autoSavePeriodMinutesTF = new JTextField( 10 );
 		Panel autoSavePeriodMinutesPanel = new Panel( autoSavePeriodMinutesTF, "オートセーブ間隔(分)" );
@@ -2744,7 +2770,11 @@ public class SMWindow extends JFrame implements Runnable {
 		Panel messagePanel = new Panel( messageTF, "メッセージ" );
 
 		durationTF = new JTextField( 10 );
-		Panel durationPanel = new Panel( durationTF, "期間" );
+		Panel durationPanel = new Panel( 
+				durationTF, 
+				"メッセージを表示する時間(秒)",
+				new double[] { 0.7, 0.3 }
+		);
 
 		messageSetterIDTF = new JTextField( 10 );
 		Panel messageSetterIDPanel = new Panel( messageSetterIDTF, "メッセージを設定した人のID" );
@@ -2772,8 +2802,8 @@ public class SMWindow extends JFrame implements Runnable {
 				"よくわからない関係 (基本的に触らなくていい)", 
 				17,
 				Panel.CREAM,
-				new int[] { 2, 1 },
-				new int[] { windowSize[0] - 200, 300 }, 
+				new int[] { 1, 1 },
+				new int[] { windowSize[0] - 200, 80 }, 
 				new int[] { 1, 1, 1, 1 }, 
 				new Component[] { 
 						allowSharedConnectionsPanel,
@@ -3346,7 +3376,7 @@ public class SMWindow extends JFrame implements Runnable {
 				17, 
 				Panel.CREAM,
 				new int[] { 11, 1 },
-				new int[] { windowSize[0] - 900, 400 }, 
+				new int[] { windowSize[0] - 800, 400 }, 
 				new int[] { 1, 1, 1, 1 }, 
 				new Component[] {
 						PvPDinoDecayPanel,
