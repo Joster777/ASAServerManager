@@ -1,0 +1,4 @@
+
+
+[2024-02-02 05:12:47] Client version: 1705108307
+[2024-02-02 05:12:47] Initialized system displaymanager: default

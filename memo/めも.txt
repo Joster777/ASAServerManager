@@ -1,0 +1,4 @@
+/**
+ * レイド恐竜の食料消費を許可(オンにするとインベントリ内の食料を消費する)
+ */
+private JTextField allowRaidDinoFeedingTF;

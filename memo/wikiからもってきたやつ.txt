@@ -1,0 +1,1250 @@
+マップの名前
+マップ名	サーバー用のマップ名
+The Island	TheIsland
+The Center	TheCenter
+Scorched Earth	ScorchedEarth_P
+Ragnarok	Ragnarok
+Aberration	Aberration_P
+Extinction	Extinction
+Valguero	Valguero_P
+Genesis: Part 1	Genesis
+Crystal Isles	CrystalIsles
+Genesis: Part 2	Gen2
+Lost Island	LostIsland
+Modマップの名前については、Workshopを見るか、製作者に直接問い合わせてください。
+
+コマンドライン引数
+これらは、サーバー起動コマンドのオプションです。 構文については、上記を参照してください。 ？で始まるオプション （疑問符）は次々に直接追加されます。-（ダッシュ）で始まるオプションは別途注意する必要があります。
+
+シングルプレイヤー用: ライブラリ内のゲーム名でSteamクライアントを右クリックし、[プロパティ]、[全般]タブ、[起動オプションの設定...]ボタンの順に選択し、オプションを入力します。 ただし、一部のオプションはこの方法では機能しません。特に、？ （疑問符）。 GameUserSettings.iniの[ServerSettings]セクションに配置してみてください（このファイルの場所については、構成ファイルを参照してください）。
+
+引数	プラットホーム	効果
+-allcores	?	?
+-UseDynamicConfig	all	customdynamicconfigurlを指定しない場合、サーバはそのプラットフォーム用のデフォルトのダイナミックコンフィグ (公式サーバで使用されているもの) を使用します。
+注意: ForceUpdateDynamicConfigコマンドを使用して即時更新を強制しない限り、ファイルが変更されてから設定が反映されるまで約15分かかります。コンフィグを「元に戻す」場合は、デフォルトのコンフィグに戻してください。
+パッチ307.2で導入
+?customdynamicconfigurl="<link>"	all	設定ファイルへの直接リンク。例:http://arkdedicated.com/dynamicconfig.ini ;
+現在、以下のオプションのみが動的に調整されるようサポートされています。
+TamingSpeedMultiplier, HarvestAmountMultiplier, XPMultiplier, MatingIntervalMultiplier, BabyMatureSpeedMultiplier, EggHatchSpeedMultiplier, BabyFoodConsumptionSpeedMultiplier, CropGrowthSpeedMultiplier, MatingSpeedMultiplier, BabyCuddleIntervalMultiplier, BabyImprintAmountMultiplier, CustomRecipeEffectivenessMultiplier, TributeItemExpirationSeconds, TributeDinoExpirationSeconds, EnableFullDump, GUseServerNetSpeedCheck, bUseAlarmNotifications, HexagonRewardMultiplier 及び NPCReplacements
+?CustomLiveTuningUrl="<link>"	PC	LiveTuningファイルへの直接リンク 例: http://arkdedicated.com/DefaultOverloads.json ;
+現在のところ、ゲーム内のすべてのアイテムのDecayDestructionPeriodとDecayDestructionPeriodMultiplierの値を変更できるのみです。
+このシステムの使用方法についての詳細は、公式アナウンスをご覧ください: https://survivetheark.com/index.php?/forums/topic/569366-server-configuration-live-tuning-system/
+-allowansel	?	シングルプレーヤーでNVIDIA Anselサポートをアクティブにします。 サーバーに接続すると、電源が入っていて点灯していても、ほとんどのライト（ランプ）が機能しなくなります。
+パッチ246.0で導入
+?AllowAnyoneBabyImprintCuddle=true		誰もが刻印されている人だけでなく、ベビーディノ（抱擁など）を「ケア」できるようにする場合に使用します。
+?AllowCrateSpawnsOnTopOfStructures=true		サーバーは、構造物によって防止されるのではなく、空からの供給クレートを構造物の上に表示できるようになりました。
+?AllowFlyerCarryPvE=true		PvEの飛行生物は野生の恐竜を運ぶことができます。
+?AllowFlyingStaminaRecovery=false		プレーヤーが乗っている代わりに立っているときに飛行生物がスタミナを回復する必要がある場合は、trueに設定します。
+?AllowMultipleAttachedC4=false		恐竜ごとに複数のC4を接続できるようにするにはtrueに設定します。
+?AutoDestroyDecayedDinos=true		要求可能な恐竜をロード時に自動破壊し、要求可能なままにしておきます。
+パッチ255.0で導入
+-automanagedmods	All	MODの自動ダウンロード/インストール/更新。
+パッチ244.3で導入
+bAppendItemSets=false		に設定すると、すべてのアイテムをオーバーライドするのではなく、クレートを提供するアイテムセットを追加します。ConfigOverrideSupplyCrateItemsを参照してください
+パッチ273.7で導入
+bAppendPreventIncreasingMinMaxItemSets=false		trueに設定すると、ドロップされるアイテムの量が動的に増加します。ConfigOverrideSupplyCrateItemsを参照してください
+パッチ273.7で導入
+?ClampItemSpoilingTimes=true		すべての腐敗時間をアイテムの最大腐敗時間に固定します。腐敗時間を変更するModで問題を引き起こす可能性があります。
+パッチ254.944で導入
+?ClampItemStats=true		アイテムの統計クランプを有効/無効にします。 詳細については、ItemStatClampsを参照してください。
+パッチ255.0で導入
+-ClearOldItems	All	公式のPvPサーバーは、アイテム複製のバグが悪用された後の公平性を確保するために、すべての古い装備されていないアイテム（設計図、食べられるもの、メモ、クエストアイテムを除く）の1回限りのクリアランスを提供します。 サーバー管理者は、このコマンド引数を使用して実行する場合、これを1回強制できます（更新前の保存ゲームでのみ機能します）。
+パッチ178.0で導入
+-culture=??	All	このコマンドラインを使用して、言語を直接オーバーライドできます。 現在サポートされている言語コードのリスト: ca, cs, da, de, en, es, eu, fi, fr, hu, it, ja, ka, ko, nl, pl, pt_BR, ru, sv, th, tr, zh, zh-Hans-CN, zh-TW
+-d3d10	Windowsのみ	ゲームはsm4によってDX11の代わりにDX10を使用することを強制されます。 これにより、グラフィックエンジンがより小さなバージョンに削減され、一部のグラフィックは削減されますが、フレームレートは上がります。
+?DestroyUnconnectedWaterPipes=true	すべて	2日間のリアルタイムの後、パイプは非パイプ（直接または間接）に接続されておらず、近くに味方プレイヤーがいない場合、パイプは自動的に破壊されます。
+?DisableImprintDinoBuff=true		気に入らない場合は、これを使用してDino Imprinting-Player Stat Bonusを無効にします（Dinoに特に刻印され、Imprinting Qualityに上げると、追加のダメージ/耐性バフが得られます）
+-EnableIdlePlayerKick	All	KickIdlePlayersPeriod内で移動または対話していないキャラクターを蹴ります。
+?EnableExtraStructurePreventionVolumes=true	All	これを使用して、特定のリソースが豊富なエリア、特に主要な山々の周りのTheIslandでのセットアップを完全に無効にします。
+?ExtinctionEventTimeInterval=2592000	All	これを使用して、30日間の絶滅を有効にします。 数値は秒単位の時間です。
+?FastDecayUnsnappedCoreStructures=true		スナップされていない基礎/支柱を5倍の速度で崩壊させます。
+パッチ245.987で導入
+-ForceAllowCaveFlyers	All	飛行恐竜を強制的に洞窟に入れます（飛行恐竜はカスタムマップでデフォルトで洞窟に入ることができます）
+?ForceFlyerExplosives=true	All	飛行（QuetzalとWyvernは、C4が取り付けられた状態では飛べません。このパラメーターをtrueに設定すると、飛ぶことができます。
+パッチ252.83で導入
+-ForceRespawnDinos	All	起動時にすべての野生生物を破壊するには、このコマンドで起動します。 （これは、現在飼い慣らされていない野生のクリーチャーのみを破壊します）
+パッチ216.0で導入
+-gameplaylogging	All	Fittestサーバーのサバイバルは、このコマンドラインオプションを使用して起動し、日付付きログファイルを\Savedフォルダーに出力します。このフォルダーには、タイムスタンプ付きのキルと勝者のログが含まれます。
+-insecure	Windows Only	バルブアンチチート（VAC）システムを無効にします。
+-lowmemory	All	グラフィックとオーディオ効果を減らして約800 MBのRAMを節約する起動オプション。4GBのRAMプレーヤーが無限のロード画面を通過できる可能性が高い
+-MapModID=#########	All	専用サーバーは、この構文を使用してマップ名を直接指定するのではなく、ModIDを介してカスタムマップをオプションでロードできるようになりました（MapModIDはカスタムマップのSteam Workshop FileIDで、GameModIdsはスタックされたmodのIDです） 順番に使用したい）
+パッチ193.0で導入
+?MaxPersonalTamedDinos=Number		部族ごとの恐竜のテイム制限を有効にします。 （公式サーバーでは500）
+パッチ255.0で導入
+?MinimumDinoReuploadInterval=xxxx	All	許可された恐竜再アップロード間のクールダウンの秒数（デフォルトは0、オフィシャルサーバーでは43200に設定され、12時間です）。
+-noantispeedhack	All	アンチスピードハック検出がデフォルトで有効になりました—無効にするには、このサーバーのコマンドラインを使用します
+パッチ218.5で導入
+-NoBattlEye		Battleyeなしでサーバーを実行する
+-NoBiomeWalls		v241.5のバージョン管理されていない追加で導入された、今後のバイオーム変更エリアウォール効果を排除します。
+パッチ242.7で導入
+-nocombineclientmoves	All	サーバーplayer-move-physics最適化はデフォルトで有効になりました（perfが改善されます）—無効にするには、このサーバーコマンドラインを使用します
+パッチ218.5で導入
+-nofishloot	All	Fishing Rodを使用する際に、肉以外のFish Lootを無効にします
+パッチ245.9で導入
+-noninlinesaveload	All	大きなセーブゲームでのセーブゲーム破損のケースを修正しました。これは実験的なものです。ロードしないセーブがある場合は、このコマンドを試してください。 副作用がないことを100％確信した後、このローダーの変更を次のパッチで正式に展開します。
+-nomansky	All	雲や星空など、詳細な空の機能の多くは無効になっています。 これはそれらのすべてを減らしますが、あなたはまだそれらを持つことができます。 あなたはまだ星、太陽、月を手に入れています。 これは、夜に視力を失わせる輝く星を取り除くのに役立ちます
+-nomemorybias		クライアントゲームのメモリ使用量を約600 MBシステムと600 MB GPU RAMで削減しました！ （すべてのメッシュがLODを動的にストリーミングするようになりました）。 これにより、実行時のパフォーマンスにわずかな影響が生じる可能性があるため、古い方法を使用するには（RAMの使用量を増やすが、潜在的なパフォーマンスの低下はありません）、-nomemorybiasを指定して起動します
+?NonPermanentDiseases=true		これにより病気は永続的ではなくなります（リスポーンすると失われます）。
+-NotifyAdminCommandsInChat		
+-oldsaveformat		デフォルトでは、「新しい保存形式」を使用します。これは、約4倍高速で、50％小さくなります。 古い保存形式を使用する場合は、-oldsaveformatを使用して起動します。
+?OnlyAutoDestroyCoreStructures=true		このオプションで自動破壊対応サーバーを起動して、非コア/非基礎構造が自動破壊されないようにすることができます（もちろん、それらが存在するフロアが自動破壊された場合でも自動破壊されます）。 公式PvEサーバーはこのオプションを使用します。
+パッチ245.989で導入
+?OnlyDecayUnsnappedCoreStructures=true		設定すると、スナップされていないコア構造のみが減衰します。 PvPサーバー上の孤立した柱/基盤スパムを排除するのに役立ちます。
+パッチ245.986で導入
+?OverrideOfficialDifficulty=5.0		デフォルトのサーバー難易度レベル4を5で上書きして、新しい公式サーバー難易度レベルに一致させることができます。
+パッチ247.95で導入
+?OverrideStructurePlatformPrevention=true		platform saddlesでturretまたはspike構造を構築可能にし、機能させるには、このオーバーライドを使用します。
+パッチ242.0で導入, changed in patch 247.999
+?OxygenSwimSpeedStatMultiplier=1.0		これを使用して、泳ぐ速度に酸素の消費レベルを掛ける方法を設定します。 256.0で値が80％減少しました。
+パッチ256.3で導入
+?PreventDiseases=true		これにより、サーバー上の病気が完全に無効になります(これまでのところ「スワンプフィーバー」)。
+?PreventDownloadSurvivors=False
+?PreventDownloadItems=False
+?PreventDownloadDinos=False
+?PreventUploadSurvivors=False
+?PreventUploadItems=False
+?PreventUploadDinos=False		Cross-ARKデータ転送を防止する
+パッチ246.0で導入
+-PreventHibernation		シングルプレイヤーサーバーと非専用サーバーの両方で、非アクティブゾーンにいるクリーチャーは、静止状態ではなく休止状態にあります。 このオプションを使用して、パフォーマンスとメモリ使用量を犠牲にしてハイバネーションを防ぎます。
+パッチ259.0で導入
+?PreventOfflinePvP=true		これを使用して、オフラインの襲撃防止オプションを有効にします。
+?PreventOfflinePvPInterval=900		それは、部族/プレイヤーの恐竜/構造がログオフした後に不死身/非アクティブになる前に、15分間待機します。 （部族の場合、すべての部族メンバーがログオフする必要があります！）
+?PreventSpawnAnimations=false		trueに設定すると、ウェイクアップアニメーションなしでプレイヤーキャラクターを（再）スポーンできます。
+パッチ261.0で導入
+?PvEAllowStructuresAtSupplyDrops=false		PvEモードで供給ドロップポイントの近くに構築できるようにするには、trueに設定します。
+パッチ247.999で導入
+?PvEDinoDecayPeriodMultiplier=1.0		Dino PvE Auto-Claim time multiplier
+パッチ241.4で導入
+?PvPDinoDecay=true		trueに設定すると、オフラインレイディング防止がアクティブなときに恐竜が腐敗するのを防ぎます。
+?PvPStructureDecay=true		trueに設定すると、Offline Raiding Preventionがアクティブなときに構造が崩壊するのを防ぎます。
+パッチ206.0で導入
+?RCONEnabled=True		Enables RCON, needs ?RCONPort=32330 and ?ServerAdminPassword=123 to work
+パッチ185.0で導入
+?RCONPort=32330		RCOnの動作にRCONの接続ポートが必要であることを指定します。指定されたポートを手動で有効にする必要があります。使用されていないポートは使用できます
+パッチ185.0で導入
+?ShowFloatingDamageText=true		これを使用して、RPGスタイルのポップアップテキスト統計モードを有効にします。
+-server	?	?
+?ServerAdminPassword=passwort		指定されている場合、プレイヤーはこのパスワードを（ゲーム内コンソールを介して）提供して、サーバー上の管理者コマンドにアクセスする必要があります。 RCON経由のログインにも使用されます。
+-servergamelog	All	サーバー管理ログを有効にする（RCONサポートを含む）RCONコマンド「getgamelog」を使用して一度に100エントリを印刷し、「\ Logs」内の日付ファイルに出力し、コマンドラインでRCONバッファーの最大長を調整する: “?RCONServerGameLogBuffer=600”
+パッチ224.0で導入
+-servergamelogincludetribelogs		
+-ServerRCONOutputTribeLogs		グローバルチャットに加えて、部族チャットをrconで表示できます。
+-sm4	Windows Only	ゲームでは、通常どおり、Shader Model 5の代わりにShader Model 4を使用する必要があります。 さて、大きな違いはありません。ゲームは同じように見えますが、パフォーマンスは向上します（Windowsのみ？）（フレームを増やすと報告されていますが、ゲームの照明は変わります）
+-StasisKeepControllers		AIコントローラーがStasisで再び破棄されるため、メモリのオーバーヘッドが大きすぎて大きなマップに配置できません。 多くのRAMを備えたサーバーの場合、AIをメモリ内に保持するためにこれを実行することにより、オプションでパフォーマンスを向上できるようになりました。
+-StructureDestructionTag=DestroySwampSnowStructures	All	スワンプゾーンとスノーゾーンでの1回限りの自動構造破壊：これを行うには、v216に更新した後に一度だけ実行できます。このコマンドラインでサーバーまたはゲームを実行します
+?TheMaxStructuresInRange=10500		サーバー上の最大許容構造の新しい値。 NewMaxStructuresInRangeを置き換えました
+パッチ252.1で導入
+?TribeLogDestroyedEnemyStructures=true		デフォルトでは、（被害者の部族の）敵の構造破壊は部族のログに表示されません。これを有効にするにはtrueに設定します。
+パッチ247.93で導入
+-USEALLAVAILABLECORES	All	すべてのCPUコアが使用されます。この起動オプションを使用した後、すべてのCPUコアが使用されていない場合は、無効にしてください。
+-usecache	All	〜70％高速な読み込み速度オプション。 「Experiment Fast Load Cache」起動オプションを選択します（手動で起動コマンドラインに「-usecache」を追加します）。 ゲームを開始する1回目と2回目以降はまだ遅くなりますが、3回目以降は速くなります。 これは、デフォルトでPrimalDataに追加された188.2の時点で非推奨になる可能性があります。 また、すべてのマップに追加されるはずでしたが、これが発生したかどうかについては明確にされていません。
+?UseOptimizedHarvestingHealth=true		HarvestAmountMultiplierが高い「最適化された」サーバー（ただし、まれではないアイテム）。
+?bRawSockets	?	サーバーネットワークのパフォーマンスを大幅に向上させるため、Steam P2Pではなく直接UDPソケット接続。 サーバーが接続を受け入れるためには、ポート7777および7778を手動で開く必要があります。
+パッチ213.0で導入、パッチv311.78から無効化。
+-nonetthreading		ネットワークに単一スレッドのみを使用するbRawSocketsサーバーのオプション（特にLinuxでCPUコアよりも多くのサーバーを搭載したマシンのパフォーマンスを向上させるのに役立ちます）
+パッチ271.15で導入 パッチ271.17で非推奨のようです
+-forcenetthreading		デフォルトの専用サーバー?bRawSocketsモードは、スレッドネットワーキングを使用しないように設定されていましたが、分析では一般に正味のパフォーマンスの低下と思われました。 これを使用して、強制的に有効にします。
+パッチv311.78から無効化。
+-vday	All	バレンタインデーのイベントを有効にします（2倍のメイトブースト範囲、3倍の交配速度/交配回復、3倍の赤ちゃん/卵成熟速度、1/3のベビーフード消費）。
+おそらく非推奨です。 代わりに-ActiveEvent=vdayを使用してください。
+
+-webalarm	All	Tripwireアラームが発生したり、赤ちゃんが生まれたりするなど、部族に重要なことが発生したときにWebアラームをアクティブにします。 詳細については、Web Notificationsを参照してください。
+パッチ243.0で導入
+-exclusivejoin	All	許可リストに追加された場合にのみプレーヤーの参加を許可するサーバーでホワイトリストのみモードをアクティブにします。 「AllowedCheaterSteamIDs.txt」を使用してプレイヤーにチートを許可する「Admin Whitelisting」と混同しないでください。 このオプションでは、「PlayersJoinNoCheckList.txt」を使用して、ユーザーは参加できるがチートは許可されません。 ファイルがLinux / Win64 Binariesフォルダーに存在しない場合は、ファイルを作成し、サーバーへの参加を許可するプレーヤーのSteam64 IDを追加します。 パス:"\ShooterGame\Binaries\Win64\" "/ShooterGame/Binaries/Linux/"
+ファイルの実行中にファイルに新しい行を追加する場合は、サーバーを再起動する必要があります。 ただし、ゲームで「Cheat AllowPlayerToJoinNoCheck 12345678901234567」を使用して、新しいプレーヤーをホワイトリストに追加できます。 このメソッドはファイルにも保存するため、サーバーを再起動する必要はありません。
+
+-ActiveEvent=<eventname>	PC	指定されたイベントを有効にします
+一度に1つだけ指定してアクティブにできます
+イベント名	説明
+Easter	Easter Eventを有効にすることができます
+Arkaeology	Arkaeology Eventを有効にすることができます
+ExtinctionChronicles	Extinction Chronicles Eventを有効にすることができます
+WinterWonderland	Winter Wonderland 2018 Eventを有効にすることができます
+vday	Valentine's Day Eventを有効にすることができます
+Summer	Summer Bash 2019 Eventを有効にすることができます
+FearEvolved	ARK: Fear Evolved 3を有効にすることができます
+TurkeyTrial	ARK: Turkey Trial 3を有効にすることができます
+birthday	ARK: 5th Anniversaryを有効にすることができます
+None	イベントは無効にします
+
+イベントによっては部分的にしか機能しない、あるいはまったく機能しない可能性もあります。
+?GameModIds=ModID1,ModID2	PC	順序とロードするmodを指定します。ModIDはコンマで区切る必要があります
+パッチ190.0で導入
+?MaxTamedDinos=4000		サーバー上の飼いならされたDinoの最大数を設定します。これはグローバルキャップです。
+パッチ191.0で導入
+?SpectatorPassword=mypassword		管理者以外の観客を使用するには、サーバーは観客のパスワードを指定する必要があります。 その後、すべてのクライアントがこれらのコンソールコマンドを使用できます: requestspectator <password>およびstopspectating。詳細およびホットキーについては、パッチ191.0を参照してください。
+?AllowCaveBuildingPVE=true		Trueに設定すると、PvEモードも有効になっているときに洞窟内での構築が可能になります。
+パッチ194.0で導入されたが、パッチ241.5より前にコマンドラインオプションから削除されたらしい。
+?AdminLogging=true		すべての管理コマンドをゲーム内チャットに記録します
+パッチ206.0で導入
+?ForceAllStructureLocking=true		これを有効にすると、デフォルトですべての構造がロックされます
+パッチ222.0で導入
+?AutoDestroyOldStructuresMultiplier=1.0		十分な「近くの部族がいない」時間が経過した後、自動破壊構造を許可するサーバーオプション（許可請求期間の乗数として定義）。 サーバーが必要に応じて、時間の経過とともに自動的に放棄された構造をクリアするのに役立ちます
+パッチ222.0で導入
+?RCONServerGameLogBuffer=600		RCONを介して送信されるゲームログの行数を決定します
+パッチ224.0で導入
+?PreventTribeAlliances=true		これを有効にすると、部族は同盟を作成できなくなります
+パッチ243.0で導入
+?AllowRaidDinoFeeding		サーバーのTitanosaursを恒久的に飼い慣らす（つまり、餌を与える）
+ただし、現在、TheIslandは3つのティタノサウルスしかスポーンしていないことに注意してください。
+パッチ243.0で導入
+?AllowHitMarkers=false		これを使用して、範囲攻撃のオプションのヒットマーカーを無効にします
+パッチ245.0で導入
+?ServerCrosshair=false		これを使用して、サーバーのクロスヘアを無効にします
+パッチ245.0で導入
+?PreventMateBoost=true		Dino Mate Boostを無効にするオプション
+パッチ247.0で導入
+?ServerAutoForceRespawnWildDinosInterval		サーバーの再起動時にWild Dinoを強制的に再スポーンします。 公式サーバーでデフォルトで有効になっているため、すべてのサーバーで毎週ディノが強制的に再スポーンされ、特定のディノタイプ（BasiloやSpinoなど）が長時間実行されるサーバーで過密になるのを防ぎます。
+注：場合によっては、これは複数回機能しない場合があります
+パッチ265.0で導入
+?PersonalTamedDinosSaddleStructureCost=19		プラットフォームサドルが部族の恐竜の制限に向けて使用するディノスロットの量を決定します
+パッチ265.0で導入
+-structurememopts	PC	構造メモリの最適化を有効にします
+注：これらのmod構造のスナップポイントが破損する可能性があるため、構造関連のmodを実行するとき（更新されるまで）は使用しないでください。
+パッチ295.108で導入
+-nodinos	PC	野生の恐竜が生成されない。
+注：既に稼働しているサーバー上にこのオプションを追加した場合、全ての恐竜を消去(チートコマンド：destroywilddinos)を実行する必要があります。
+
+-noundermeshchecking	PC	アンチメッシングシステムをオフにします。
+パッチ304.445で導入
+
+-noundermeshkilling	PC	アンチメッシングシステムによるプレイヤーキルをオフにします。（但し、テレポートを許可します）
+パッチ304.445で導入
+
+-AutoDestroyStructures	PC	期限切れ構造物の自動破壊を有効にします。
+期限は以下のオプションで調整できます。AutoDestroyOldStructuresMultiplier
+
+-crossplay	PC	専用サーバーでのクロスプレイ（SteamとEPIC間）を可能にします。
+パッチ311.74で導入
+
+-epiconly	PC	Epic Game Storeのプレイヤーのみが専用サーバーに接続できるようになります。
+パッチ311.74で導入
+
+-UseVivox	PC	Steamサーバーでのみ、Vivoxを有効化します。
+EpicサーバーのデフォルトはSteamサーバーで有効にすることができます。
+
+パッチ311.74で導入
+
+-PublicIPForEpic=<IPアドレス>	PC	このコマンドラインがなく、-Multihomeが指定されている場合、EGSクライアントはMultihomeで指定されたIPに接続しようとします。
+注：Multihomeを使用していて、パブリックでないIPアドレスを指定すると、プレイヤーはEGSを使用してサーバーに接続できなくなります。必ずパブリックIPアドレスを指定してください。（WANまたは外部など）
+
+-high	PC	ゲーム（ARK:SE）を優先度の高いプロセスとして実行します。
+-noaafonts	PC	フォントのアンチエイリアシングを除去します。
+?IgnoreLimitMaxStructuresInRangeTypeFlag=false	PC	建築上限である150個の制限を無効化します。
+-UseStructureStasisGrid	PC	多くのプレイヤーがいる大規模な拠点でサーバーパフォーマンスを向上させるために、建築物のステイシスグリッドを使用できるようになりました。
+詳細は https://survivetheark.com/index.php?/articles.html/community-crunch-241-fear-evolved-4-live-tuning-system-network-improvements-and-more-r1652/ をご覧ください。
+-NewYearEvent	PC	新年イベントは、以下の2つのオプションで特別に指定されない限り、2021年1月1日の東部標準時の深夜と東部標準時の正午に自動的に開始されます。
+パッチ320.38で導入
+?NewYear1UTC=<epoch time>	PC	NewYearEventの追加オプション1です。
+適切なepoch time値の取得にはhttps://www.epochconverter.com/を使用してください。このイベントは2021年1月1日午前0時（米国東部標準時）より前には実行できないので、もし時間を変更したい場合はそれ以降に設定する必要があることに留意してください。
+パッチ320.38で導入
+
+?NewYear2UTC=<epoch time>	PC	NewYearEventの追加オプション2です。
+適切なepoch time値の取得にはhttps://www.epochconverter.com/を使用してください。このイベントは2021年1月1日午前0時（米国東部標準時）より前には実行できないので、もし時間を変更したい場合はそれ以降に設定する必要があることに留意してください。
+パッチ320.38で導入
+
+-UseItemDupeCheck	PC	追加的なデュープ・プロテクションを有効にする（注意：MODに影響を与える可能性があるため、使用には細心の注意を払うこと）
+パッチ333.13で導入
+広告
+
+構成ファイル
+ほとんどのオプションは、ゲーム構成ファイルでも指定できます。 構成ファイルの場所はプラットフォームによって異なります:
+
+プラットホーム	構成ファイル	場所
+Linux	GameUserSettings.ini	ShooterGame/Saved/Config/LinuxServer/
+Linux	Game.ini	ShooterGame/Saved/Config/LinuxServer/
+Windows	GameUserSettings.ini	ShooterGame/Saved/Config/WindowsServer/
+Windows	Game.ini	ShooterGame/Saved/Config/WindowsServer/
+GameUserSettings.iniファイルには、ゲームクライアントとゲームサーバーの両方のオプションが含まれています。 ゲームクライアントのオプションは、サーバーでは使用されません。 サーバーオプションは[ServerSettings]というラベルのセクションで指定されます。通常、このセクションはファイルの下部にあります。
+
+Game.iniファイルは、エングラムポイントやレベルごとの報酬XPの変更、特定のコンテンツの無効化、プレーヤーの好みに応じたリバランスなど、より高度な変更に使用されます。
+
+サポートされているすべてのプラットフォームで、オプションは同じ基本構文を使用して1行に1つずつリストされます。:
+
+<option>=<value>
+構成ファイルのすべてのオプションには値が必要です。 オプションが構成ファイルにリストされていない場合、デフォルト値が自動的に使用されます。
+
+上記のCommand Line Syntaxに示されているのと同じ構成でゲームサーバーを構成するには:
+
+ServerCrosshair=True
+AllowThirdPersonPlayer=True
+MapPlayerLocation=True
+TheMaxStructuresInRange=100
+構成ファイルのこれらのオプションを使用すると、サーバーを非常に短いコマンドラインで起動できます。 Linuxの場合:
+
+./ShooterGameServer TheIsland?listen
+Windowsの場合:
+
+start ShooterGameServer.exe "TheIsland?listen"
+広告
+
+GameUserSettings.ini
+このファイルを簡単に作成するには、この ini-Generator を使用できます。
+
+オプション	値のタイプ	デフォルト	効果
+<map_name>	string	None	(コマンドラインのみ)ゲームプレイに使用するマップを指定します
+注: このオプションは必須であり、コマンドラインで指定する最初のオプションである必要があります。マップオプションは、TheIsland、TheCenter (DLCが必要)、ScorchedEarth_P (DLCが必要)、Ragnarok (DLCが必要)、Aberration_P (DLCが必要)、Extinction (DLCが必要)、Valguero_P (DLCが必要)
+注: Modマップには、ここで指定したマップ名とは異なるものがあります。modpageを確認するか、modの作成者に正確な名前を問い合わせてください。
+listen	N/A	None	(コマンドラインのみ) 他のシステムからのプレーヤー接続を聞く（および受け入れ）
+注: このオプションは、マルチプレイヤーサーバーでは必須です。
+alwaysNotifyPlayerJoined	boolean	False	誰かがサーバーに参加すると、プレイヤーに常に通知されます
+alwaysNotifyPlayerLeft	boolean	False	誰かがサーバーを離れると、プレイヤーは常に通知されます
+allowThirdPersonPlayer	boolean	False	三人称視点を有効にします
+globalVoiceChat	boolean	False	ボイスチャットがグローバルになります
+ShowMapPlayerLocation	boolean	False	各プレイヤーがマップを表示するときに、自分の正確な位置を表示します
+noTributeDownloads	boolean	False	他のサーバーからのキャラクターのダウンロードを無効にします
+proximityChat	boolean	False	チャットメッセージを見ることができるのは、互いに近いプレイヤーのみです
+serverPVE	boolean	False	PvPを無効にし、PvEを有効にします
+serverHardcore	boolean	False	hardcoreモードを有効にします（死亡時にプレイヤーキャラクターはレベル1に戻ります）
+serverForceNoHud	boolean	False	HUDは常に無効
+bDisableStructureDecayPvE	boolean	False	プレーヤーの建造物の段階的な（7日間）減衰を無効にします
+パッチ173.0で導入
+DisableDinoDecayPvE	boolean	False	恐竜の所有権の段階的（7日間）の減衰を無効にします。 これがtrueに設定されていない場合、すべての恐竜はどのプレイヤーでも獲得できます。
+パッチ206.0で導入
+AllowFlyerCarryPvE	boolean	False	PvEのプレイヤーが騎乗した場合、飛行中の恐竜が他の恐竜やプレイヤーを拾うことを許可します。
+パッチ173.0で導入されましたが、bAllowFlyerCarryPVEからAllowFlyerCarryPVEに変更されました
+TheMaxStructuresInRange	integer	10500	特定の（現在ハードコーディングされている）範囲内で構築できる建造物の最大数を指定します。
+パッチ252.1で導入され、古い値NewMaxStructuresInRangeを置き換えます
+bAllowPlatformSaddleMultiFloors	boolean	False	複数のプラットフォームフロアを許可するには、trueに設定します。
+パッチ260.0で導入
+MaxPlayers	integer	70	サーバーで同時にプレイできるプレーヤーの最大数を指定します。 コマンドラインで使用しない場合に機能するには、GameUserSettings.iniの[/script/engine.gamesession]の下に配置する必要があります。
+DifficultyOffset	float	0.2	難易度を指定します。
+ServerPassword	string	None	指定した場合、プレイヤーはサーバーに参加するためにこのパスワードを提供する必要があります。
+ServerAdminPassword	string	None	指定されている場合、プレイヤーはこのパスワードを（ゲーム内コンソールを介して）提供して、サーバー上の管理者コマンドにアクセスする必要があります。
+SpectatorPassword	string	None	管理者以外が観戦モードを使用するには、サーバーは観戦モードのパスワードを指定する必要があります。 その後、すべての来訪者がこれらのコンソールコマンドを使用できます: requestspectator <password>およびstopspectating。詳細およびホットキーについては、パッチ191.0を参照してください。
+DayCycleSpeedScale	float	1.0	ARKの時間経過のスケーリング係数を指定し、昼が夜に変わり、夜が昼に変わる頻度を制御します。ARKの時間経過のスケーリング係数を指定し、日が夜に変わり、夜が日に変わる頻度を制御します。
+デフォルト値1は、シングルプレイヤーエクスペリエンス（および公式のパブリックサーバー）と同じサイクル速度を提供します。1より小さい値はサイクルを遅くします。 値が大きいほど加速します。 値が1の場合の基準時間は、1分であるように見えます。 ゲーム時間28分。 したがって、ゲームのおよそ24時間の昼/夜サイクルでは、値に.035を使用します。
+
+NightTimeSpeedScale	float	1.0	夜間のARKの時間経過のスケーリング係数を指定します。 この値は、（DayTimeSpeedScaleで指定された）各昼の長さに対する各夜の長さを決定します。この値を小さくすると、各夜の長さが長くなります。
+DayTimeSpeedScale	float	1.0	昼間のARKの時間経過のスケーリング係数を指定します。 この値は、（NightTimeSpeedScaleで指定された）各夜の長さに対する相対的な昼の長さを決定します。この値を小さくすると、各昼の長さが長くなります。
+DinoDamageMultiplier	float	1.0	恐竜が攻撃に対処するダメージのスケーリング係数を指定します。 デフォルト値1は通常のダメージを与えます。 値が大きいほどダメージが大きくなります。 値が小さいほど減少します。
+PlayerDamageMultiplier	float	1.0	プレイヤーが攻撃に対処するダメージの倍率を指定します。 デフォルト値1は通常のダメージを与えます。 値が大きいほどダメージが大きくなります。 値が小さいほど減少します。
+StructureDamageMultiplier	float	1.0	攻撃に対処する損傷建造物（つまり、壁のスパイク）のスケーリング係数を指定します。デフォルト値1は通常のダメージを与えます。 値が大きいほどダメージが大きくなります。 値が小さいほど減少します。
+PlayerResistanceMultiplier	float	1.0	攻撃を受けたときにプレイヤーが受けるダメージに対する抵抗の倍率を指定します。 デフォルト値1は通常のダメージを与えます。 値を大きくすると抵抗が減少し、攻撃ごとのダメージが増加します。 値を小さくすると増加し、攻撃ごとのダメージが減少します。 値が0.5の場合、プレーヤーのダメージは半分になり、値が2.0の場合、通常のダメージは2倍になります。
+DinoResistanceMultiplier	float	1.0	攻撃されたときに恐竜が受けるダメージに対する耐性の倍率を指定します。 デフォルト値1は通常のダメージを与えます。 値を大きくすると抵抗が減少し、攻撃ごとのダメージが増加します。 値を小さくすると増加し、攻撃ごとのダメージが減少します。 値が0.5の場合、恐竜は半分のダメージを受け、値が2.0の場合、恐竜は通常の2倍のダメージを受けます。
+StructureResistanceMultiplier	float	1.0	攻撃されたときに受ける建造物のダメージに対する耐性のスケーリング係数を指定します。 デフォルト値1は通常のダメージを与えます。 値を大きくすると抵抗が減少し、攻撃ごとのダメージが増加します。 値を小さくすると増加し、攻撃ごとのダメージが減少します。 値が0.5の場合、建造物のダメージは半分になり、値が2.0の場合、建造物のダメージは通常の2倍になります。
+XPMultiplier	float	1.0	プレイヤー、トライブ、恐竜がさまざまなアクションで受け取る経験値のスケーリング係数を指定します。 デフォルト値1は、シングルプレイヤー経験値（および公式のパブリックサーバー）と同じ量の経験値を提供します。 値を大きくすると、さまざまなアクションに対して付与されるXP量が増加します。 値が小さいほど減少します。
+253.0では、追加のハードコードされた2の乗数が有効になりました。
+PvEStructureDecayPeriodMultiplier	float	1.0	PvEモードでのプレーヤー構造の減衰率のスケーリング係数を指定します。 このオプションの具体的な効果と有効な値の範囲は、この記事の執筆時点では不明です。[1]
+PvEStructureDecayDestructionPeriod		0	プレイヤーの構造がPvEモードで減衰するのに必要な時間を指定します。 このオプションの具体的な効果と有効な値の範囲は、この記事の執筆時点では不明です。[1]
+PvEDinoDecayPeriodMultiplier	float	1.0	... パッチ206.0で導入
+TamingSpeedMultiplier	float	1.0	恐竜のテイム速度のスケーリング係数を指定します。 値が大きいほど、テイムが速くなります。
+HarvestAmountMultiplier	float	1.0	すべての収穫活動（木を切り倒したり、果実を摘んだり、死体の肉を切り分けたり、岩を採掘したりなど）からの収量の倍率を指定します。 値を大きくすると、打ち込むごとに収穫される材料の量が増えます。
+HarvestHealthMultiplier	float	1.0	収穫できるアイテム（樹木、岩、死体など）の「体力」のスケーリング係数を指定します。 値を大きくすると、そのようなオブジェクトが破壊される前に耐えることができるダメージの量（つまり「打ち込む数」）が増加し、全体的な収穫量が増加します。
+MaxPlatformSaddleStructureLimit	integer		ARKで許可されるプラットフォーム生物/いかだの最大数を変更します（潜在的なパフォーマンスコスト）
+例: MaxPlatformSaddleStructureLimit=10では、ARK全体で10個のプラットフォームサドル/いかだのみが許可されます。
+パッチ212.1で導入
+PerPlatformMaxStructuresMultiplier	float	1.0	サドルといかだに配置できるアイテムの最大数（パーセントスケール）の最大数
+例: PerPlatformMaxStructuresMultiplier=1.5
+(パッチ211.0で導入)
+ResourcesRespawnPeriodMultiplier	float	1.0	リソースノード（木、岩、茂みなど）のリスポーンレートのスケーリング係数を指定します。 値を小さくすると、ノードがより頻繁に再生成されます。
+PlayerCharacterWaterDrainMultiplier	float	1.0	プレイヤーキャラクターの水消費量の倍率を指定します。 値を大きくすると、水の消費量が増加します（プレイヤーキャラクターの渇きが早くなります）。
+PlayerCharacterFoodDrainMultiplier	float	1.0	プレイヤーキャラクターの食物消費のスケーリング係数を指定します。 値を大きくすると、食物消費量が増加します（プレイヤーキャラクターはより早く空腹になります）。
+PlayerCharacterStaminaDrainMultiplier	float	1.0	プレイヤーキャラクターのスタミナ消費のスケーリング係数を指定します。 値を大きくすると、スタミナの消費が増加します（プレイヤーキャラクターの疲れが早くなります）。
+PlayerCharacterHealthRecoveryMultiplier	float	1.0	プレイヤーキャラクターの体力回復の倍率を指定します。 値を大きくすると回復率が上がります（プレイヤーキャラクターの回復が速くなります）。
+DinoCharacterFoodDrainMultiplier	float	1.0	恐竜の食物消費の倍率を指定します。 より高い値は食物消費を増加させます（恐竜はより早く空腹になります）。 また、テイム時間にも影響します。
+DinoCharacterStaminaDrainMultiplier	float	1.0	恐竜のスタミナ消費のスケーリング係数を指定します。 値を大きくすると、スタミナの消費が増加します（恐竜は早く疲れます）。
+DinoCharacterHealthRecoveryMultiplier	float	1.0	恐竜の体力回復のスケーリング係数を指定します。 値が大きいほど回復率が高くなります（恐竜の回復が早くなります）。
+DinoCountMultiplier	float	1.0	恐竜のスポーンの倍率を指定します。 値を大きくすると、ARK全体に出現する恐竜の数が増えます。
+AllowCaveBuildingPvE	boolean	False	Trueに設定すると、PvEモードも有効になっているときに洞窟内での建造が許可されます。
+パッチ194.0で導入
+BanListURL	URL	"http://arkdedicated.com/banlist.txt"	公式のグローバル禁止リストを使用するか、必要なオンライン禁止リストを指定します。 二重引用符で囲む必要があります。279.233より前のURLはhttp://playark.com/banlist.txtでした
+パッチ201.0で導入
+PvPStructureDecay	boolean	false	PvPサーバーの建造物崩壊をオフにします。
+TributeItemExpirationSeconds	integer	86400	アップロードされたアイテムの有効期限タイマーを設定します。
+TributeDinoExpirationSeconds	integer	86400	アップロードされた恐竜の有効期限タイマーを設定します。
+TributeCharacterExpirationSeconds	integer	86400	アップロードされたサバイバーの有効期限タイマーを設定します。
+AutoSavePeriodMinutes	float	15.0	自動保存の間隔を設定する
+NPCNetworkStasisRangeScalePlayerCountStart			
+NPCNetworkStasisRangeScalePlayerCountEnd			
+NPCNetworkStasisRangeScalePercentEnd	float		
+bUseCorpseLocator	boolean	false	trueに設定されている場合、死亡した場所に緑色の光ビームが表示されます
+CrossARKAllowForeignDinoDownloads	boolean	false	trueに設定されている場合、Aberrationマップでダウンロードした非ネイティブ生物をトリビュートできます。
+パッチ275.0で導入
+DisablePvEGamma	boolean	false	PvEモードでコンソールコマンド「gamma」を使用できないようにします
+パッチ207.0で導入
+EnablePvPGamma	boolean	false	PvPモードでコンソールコマンド「gamma」の使用を許可する
+パッチ174.3で導入
+TribeNameChangeCooldown	integer	15	トライブ名の変更の間のクールダウン、分単位
+パッチ278.0で導入
+AllowHideDamageSourceFromLogs	boolean	false	トライブのログにダメージ源を隠すことができます。
+パッチ278.0で導入
+RandomSupplyCratePoints	boolean	false	trueの場合、サプライドロップはランダムな場所にあります。 注：この設定は、アクティブな場合、[Ragnarok]でアーティファクトがアクセス不能になることが知られています
+パッチ278.0で導入
+DisableWeatherFog	boolean	false	trueの場合、霧を無効にします。
+パッチ278.0で導入
+ActiveMods	integer	ModID	順序とロードするmodを指定します。ModELはコンマで区切って1行にする必要があります
+パッチ190.0で導入
+AdminLogging	boolean	true	すべての管理者コマンドをゲーム内チャットに記録します
+パッチ206.0で導入
+ClampResourceHarvestDamage	boolean	false	恐竜によって引き起こされるダメージを収穫のためのリソースに制限します。
+パッチ182.0で導入
+ItemStackSizeMultiplier	float	1.0	グローバルアイテムスタックサイズの増減を許可します。これは、すべてのデフォルトスタックサイズに指定された値が乗算されることを意味します
+パッチ291.100で導入
+PlatformSaddleBuildAreaBoundsMultiplier	float	1.0	数を増やすと、プラットフォームから離れた場所に建造物を配置できます
+MaxTamedDinos	integer	4000	サーバー上のテイムされた恐竜の最大数を設定します。これは全体での上限です。
+パッチ191.0で導入
+NewMaxStructuresInRange	integer	6000	特定の（現在ハードコーディングされている）範囲内で建造できる建造物の最大数を指定します。
+パッチ188.0で導入され、TheMaxStructuresInRangeによってパッチ252.1で非推奨になりました
+MaxStructuresInRange	integer	1300?	特定の（現在ハードコーディングされている）範囲内で建造できる建造物の最大数を指定します。
+パッチ173.0で導入され、NewMaxStructuresInRangeによってパッチ188.0で非推奨になりました
+広告
+
+Ragnarok
+次のオプションは、DLCRagnarokをプレイしている場合にのみ使用できます。
+
+GameUserSettings.iniファイルの[Ragnarok]セクションで設定する必要があります（持っていない場合は、下部に作成できます）。
+
+注：これらの設定を使用する必要はありません。 これらの設定が指定されていない場合、ゲームはデフォルト値を使用します。
+
+オプション	値のタイプ	デフォルト	効果
+AllowMultipleTamedUnicorns	boolean	false	false = 一度にマップ上の1つのユニコーン、 true = 野生の無制限の飼いならされたユニコーンがマップ上に1つあります。
+*現在、この設定は適切に機能していないようです
+UnicornSpawnInterval	integer	24	野生のUnicornが殺された場合（またはAllowMultipleTamedUnicornsが有効になっている場合は飼いならされた場合）、新しいユニコーンをスポーンする前にゲームが待機する時間。 この値は最小時間（時間単位）を設定し、最大値はこの値の2倍に等しくなります。
+VolcanoIntensity	float	1	値が低いほど、火山の噴火は激しくなります。 1のままにすることをお勧めします。最小値は0.25です。マルチプレイヤーゲームの場合、0.5未満にしないでください。 非常に高い数値は、基本的に火山から飛び出した炎のような岩を無効にします。
+VolcanoInterval	integer	0	0 = 5000 (最小) - 15000 (最大) 火山のインスタンスがアクティブになるまでの秒数。 0を超える数値は乗数として機能し、最小値は.1です。
+EnableVolcano	boolean	true	false = 無効 (火山は活発になりません), 有効 = enabled
+ARK: Homestead specific
+オプション	値のタイプ	デフォルト	効果
+AlwaysAllowStructurePickup	boolean	false	trueの場合、クイックピックアップシステムのタイマーが無効になります
+StructurePickupTimeAfterPlacement	float	30.0	クイックピックアップが利用可能な配置後の秒数
+AllowIntegratedSPlusStructures	boolean	true	falseの場合、すべての新しいS+建造物が無効になります（主に、S+ modバージョンを使用し続けたい非公式者が、余分な重複構造なしでそれを使用し続けることを目的としています）
+StructurePickupHoldDuration	float	0.5	クイックピックアップのホールド期間を指定するために使用します
+0を使用して、無効にしてインスタントピックアップを使用します
+広告
+
+Game.ini
+次のオプションは、GameUserSettings.iniと同じフォルダーにあるGame.iniの[/script/shootergame.shootergamemode]セクションでのみ設定できます（各プラットフォームの場所については上記を参照）。 コマンドラインでそれらを指定しても効果はありません。
+
+オプション	引数	効果と例
+ConfigOverrideItemMaxQuantity=(ItemClassString="<Class Name>",Quantity=(MaxItemQuantity=<n>, bIgnoreMultiplier=<value>))	
+Class Name	string	新しいスタックサイズにオーバーライドされるアイテムのClass Name
+n	integer	指定されたアイテムの新しいスタックサイズ
+value	boolean	falseの場合、実際のスタックサイズはItemStackSizeMultiplier * MaxItemQuantityであることを意味します
+trueの場合、MaxItemQuantityを直接使用し、乗数を無視します
+
+アイテムごとにアイテムのスタックサイズを手動でオーバーライドできます。
+例:
+
+ConfigOverrideItemMaxQuantity=(ItemClassString="PrimalItemAmmo_ArrowTranq_C",Quantity=(MaxItemQuantity=543, bIgnoreMultiplier=true))
+これにより、Tranqarrowsスタックはスタックごとに543アイテムになります
+
+bAllowUnlimitedRespecs=<value>	
+value = boolean (true/false)
+Default = false
+
+trueに設定すると、24時間のクールダウンなしでMindwipe Tonicを複数回使用できます。
+bOnlyAllowSpecifiedEngrams=<value>
+
+value = boolean (true/false)
+Default = false
+
+trueの場合、OverrideEngramEntriesまたはOverrideNamedEngramEntriesリストで明示的に指定されていないエングラムは非表示になります。 非表示のエングラムに基づくすべてのアイテムとブループリントは削除されます。
+パッチ187.0で導入
+
+LevelExperienceRampOverrides=(
+ExperiencePointsForLevel[<n>]=<points>
+[,ExperiencePointsForLevel[<n>]=<points>]
+...
+[,ExperiencePointsForLevel[<n>]=<points>])
+
+n	integer	設定するレベル
+points	integer	レベルに到達するために必要なポイント
+プレイヤーと恐竜が利用できるレベルの総数と、各レベルに到達するために必要な経験値を設定します。
+このディレクティブは、構成ファイルで2回指定できます。 初めて表示されるとき、提供される値はプレーヤーのレベルを構成します。 2回目に表示される値は、恐竜のレベルを構成します。
+
+このため、ディレクティブを使用するたびに、プレイヤー（または恐竜）がサーバー上で到達できるすべてのレベルをリストする必要があります。One ExperiencePointsForLevel引数は、目的のレベルごとに1つ表示する必要があります。<n>の値は、ゼロから始まる連続したものでなければなりません。 最後の15レベルはアセンションに使用されることに注意してください。つまり、構成ファイルに15レベルを追加する必要があります。
+
+ここで提供される例は、スペースを考慮して複数の行に分割されています。 構成ファイルでは、エントリを1行に配置する必要があります。
+
+LevelExperienceRampOverrides=(
+ExperiencePointsForLevel[0]=1,
+ExperiencePointsForLevel[1]=5,
+...
+ExperiencePointsForLevel[64]=1000)
+LevelExperienceRampOverrides=(
+ExperiencePointsForLevel[0]=1,
+ExperiencePointsForLevel[1]=5,
+...
+ExperiencePointsForLevel[34]=1000)
+最初の例では、50のプレイヤーレベルと15のアセンションレベルを指定しています。 2番目の例（最初の例の後に構成ファイルに配置された場合）は、35の恐竜レベルを指定します。
+
+OverridePlayerLevelEngramPoints=<points>	points = integer	獲得した各レベルのプレーヤーに付与されるエングラムポイントの数を設定します。
+このオプションは、サーバーで構成されている各プレーヤーレベルで繰り返す必要があります。 65のプレーヤーレベルが使用可能な場合、このオプションは構成ファイルに65回表示されます。 オプションの最初の外観は、レベル1に到達するためのエングラムポイントを構成します。次のオプションは、レベル2のエングラムポイントを構成し、レベル65のエングラムポイントを構成する65番目の外観まで続きます。
+
+OverridePlayerLevelEngramPoints=5
+OverridePlayerLevelEngramPoints=10
+...
+OverridePlayerLevelEngramPoints=100
+GlobalSpoilingTimeMultiplier=<value>	value = float
+Default = 1.0	生鮮食品の腐敗時間を世界規模で拡大します。 値が大きいほど時間が長くなります。 （注：パッチ196.0の時点では、この値が何に設定されていても、プレイヤーのインベントリに移動されたアイテムの腐敗時間が通常（値1.0）にリセットされるバグがまだあります。248.5 修正されました。）
+パッチ189.0で導入
+GlobalItemDecompositionTimeMultiplier=<value>	value = float
+Default = 1.0	ドロップされたアイテム、戦利品バッグなどの分解時間をグローバルにスケーリングします。 値が大きいほど時間が長くなります。
+パッチ189.0で導入
+GlobalCorpseDecompositionTimeMultiplier=<value>	value = float
+Default = 1.0	死体（プレイヤーと恐竜）の分解時間をグローバルにスケーリングします。 値が大きいほど時間が長くなります。
+パッチ189.0で導入
+HarvestResourceItemAmountClassMultipliers=(
+ClassName="<classname>",
+Multiplier=<value>
+)	
+classname	string	リソースのクラス名、
+Item IDsを参照
+value	float	Default = 1.0
+収集されるリソースの量であるリソースタイプごとにスケーリングします。 値を大きくすると、打つ/攻撃ごとの量が増えます。 例えば:
+HarvestResourceItemAmountClassMultipliers=(
+ ClassName="PrimalItemResource_Thatch_C",
+ Multiplier=2.0
+)
+木からわらを収穫するときに収穫量の2倍を提供します。 リソースクラス名は、Item IDsにあります。グローバル設定HarvestAmountMultiplierと同じように機能しますが、この行で指定されたタイプのリソースに対してのみ機能します。 追加の行は、木材、石などの他のリソースタイプで追加できます。
+パッチ189.0で導入
+
+OverrideMaxExperiencePointsPlayer=<value>
+OverrideMaxExperiencePointsDino=<value>
+
+value = integer
+Default = N/A	プレイヤーと恐竜のそれぞれの最大XPキャップを、指定された量だけ上書きします。
+パッチ189.0で導入
+PreventDinoTameClassNames="<classname>"	classname = string	クラス名による特定の恐竜のテイムを防ぎます。 例えばPreventDinoTameClassNames="Argent_Character_BP_C"
+恐竜のクラス名は、Creature IDsページにあります。
+パッチ194.0で導入
+
+DinoClassDamageMultipliers=(
+ClassName="<classname>",
+Multiplier=<multiplier>
+)
+TamedDinoClassDamageMultipliers=(
+ClassName="<classname>",
+Multiplier=<multiplier>
+)
+
+classname = string
+multiplier = float Default 1.0
+
+クラス名を介して特定の恐竜に与えられたダメージを掛けます。 値を大きくすると、与えるダメージが増加します。
+恐竜クラス名はCreature IDsページで見つけることができます。
+
+ここで提供される例は、スペースを考慮して複数の行に分割されています。 構成ファイルでは、エントリを1行に配置する必要があります。 複数のDinoClassDamageMultipliersおよびTamedDinoClassDamageMultipliersエントリをファイルに指定できますが、ClassNameの値は複数のエントリ間で繰り返さないでください。
+
+例:
+
+DinoClassDamageMultipliers=(
+ ClassName="MegaRex_Character_BP_C",
+ Multiplier=0.1
+)
+TamedDinoClassDamageMultipliers=(
+ ClassName="Rex_Character_BP_C",
+ Multiplier=10.0
+)
+改行とスペースは、例を読みやすくするためにここにあります。 構成ファイルの1行として保管してください。
+
+パッチ194.0で導入
+
+DinoClassResistanceMultipliers=(
+ClassName="<classname>",
+Multiplier=<multiplier>
+)
+TamedDinoClassResistanceMultipliers=(
+ClassName="<classname>",
+Multiplier=<multiplier>
+)
+
+classname = string
+multiplier = float Default 1.0
+
+クラス名を介して特定の恐竜の抵抗を掛けます。 値が大きいほど、受けるダメージが減少します。
+恐竜クラス名はCreature IDsページで見つけることができます。
+
+ここで提供される例は、スペースを考慮して複数の行に分割されています。 構成ファイルでは、エントリを1行に配置する必要があります。 複数のDinoClassResistanceMultipliersおよびTamedDinoClassResistanceMultipliersエントリをファイルに指定できますが、ClassNameの値は複数のエントリ間で繰り返さないでください。
+
+例:
+
+DinoClassResistanceMultipliers=(
+ ClassName="MegaRex_Character_BP_C",
+ Multiplier=0.1
+)
+TamedDinoClassResistanceMultipliers=(
+ ClassName="Rex_Character_BP_C",
+ Multiplier=10.0
+)
+改行とスペースは、例を読みやすくするためにここにあります。 構成ファイルの1行として保管してください。
+
+パッチ194.0で導入
+
+ResourceNoReplenishRadiusPlayers=<value>
+ResourceNoReplenishRadiusStructures=<value>
+
+Value = float Default = 1.0	リソースがプレイヤーや構造物に近づいたり遠ざかったりするのを許可します。 1より大きい値を設定すると、リソースを元に戻せないプレーヤーや構造物の周囲の距離が長くなります。 0から1の間の値はそれを減らします。
+パッチ196.0で導入
+
+bIncreasePvPRespawnInterval=<Boolean>
+IncreasePvPRespawnIntervalCheckPeriod=<value1>
+IncreasePvPRespawnIntervalMultiplier=<value2>
+IncreasePvPRespawnIntervalBaseAmount=<value3>
+boolean	boolean (true/false)	Default = N/A
+value1	float	Default = 300
+value2	float	Default = 2
+value3	float	Default = 60
+PvPサーバーには、オプションの+1分の追加リスポーン(<value3>)があり、そのチームが前に死亡してから5分(<value1>)以内にチームによって殺された場合、そのたびに毎回2倍(<value2>)します（Spawn UIに示されるタイマー）。
+pvpでデフォルトで有効になっており、すべての公式pvpサーバーで有効になっています。自動タレットの犠牲者のプレイヤーに繰り返し投げるPvO弾薬の消耗を防ぐのに役立ちます。 これらのオプションをアクティブにするには、bIncreasePvPRespawnIntervalをTrueに設定する必要があります。 パッチ196.0で導入
+
+bAutoPvETimer=<Boolean1>
+bAutoPvEUseSystemTime=<Boolean2>
+AutoPvEStartTimeSeconds=<value1>
+AutoPvEStopTimeSeconds=<value2>
+boolean1	Boolean (true/false)	Default = N/A
+boolean2	boolean (true/false)	Default = N/A
+value	0 to 86400	Default = N/A
+value	0 to 86400	Default = N/A
+事前に指定されたゲーム内時間または事前に指定された実世界（サーバー側）時間でPvEモードからPvPモードに切り替えることができます！ システム時間とゲーム内時間の使用に関する詳細については、パッチノート196.0を参照してください。
+これらのオプションを有効にするには、bAutoPvETimerをTrueに設定する必要があります。
+
+パッチ196.0で導入
+
+bPvEDisableFriendlyFire=<value>	Value = boolean (true/false)
+Default = false	PvEサーバー向けのPrevent-Friendly-Fire（tribesmates / tribesdinos / tribesstructures）オプション
+パッチ202.0で導入
+bDisableFriendlyFire=<value>	Value = boolean (true/false)
+Default =false	PvPサーバー向けのPrevent-Friendly-Fire（tribesmates / tribesdinos / tribesstructures）オプション
+パッチ228.4で導入
+bFlyerPlatformAllowUnalignedDinoBasing=<boolean>	Value = boolean (true/false)
+Default = false	Quetzプラットフォームでは、飛行中に同盟のない恐竜をベースにすることはできません。 サーバーで、非同盟ディーノがQuetzプラットフォームに立つことができるようにするには、これをtrueに設定します。
+パッチ218.3で導入
+MatingIntervalMultiplier=<value>	Value = float
+Default = 1.0	恐竜が交尾できる間隔が（パーセンテージで）大きくなる
+例: MatingIntervalMultiplier=0.5の場合、恐竜は50％早く交尾できます
+パッチ219.0で導入
+
+MatingSpeedMultiplier=<value>	Value = float
+Default = 1.0
+
+恐竜が互いに交尾する速度が（パーセンテージで）高くなる
+例: MatingSpeedMultiplier=2.0の場合、恐竜は通常の半分の時間で交尾を完了します
+
+パッチで導入??? （この変数はパッチノートに記載されていません）
+
+EggHatchSpeedMultiplier=<value>	Value = float
+Default = 1.0	数字が大きいほど、受精卵の孵化に必要な時間が短縮されます（数字）
+パッチ219.0で導入
+
+BabyMatureSpeedMultiplier=<value>	Value = float
+Default = 1.0	数字が大きいほど、赤ちゃんの恐竜が成熟するのに必要な時間が短縮されます（パーセント）
+パッチ219.0で導入
+
+BabyFoodConsumptionSpeedMultiplier=<value>	Value = float
+Default = 1.0	数字が小さいほど、赤ちゃんの恐竜が食べ物を食べる速度が低下します（パーセント）
+パッチ222.3で導入
+
+CropGrowthSpeedMultiplier=<value>	Value = float
+Default = 1.0	数値が大きいほど作物の成長速度が上がります（パーセント）
+パッチ218.0で導入
+LayEggIntervalMultiplier=<value>	Value = float
+Default = 1.0	数字が大きいほど、卵が産卵/産卵されるまでの時間が長くなります（パーセント）
+パッチ218.0で導入
+PoopIntervalMultiplier=<value>	Value = float
+Default = 1.0	数字が大きくなるほど頻繁に糞をすることができます（パーセント）
+パッチ218.0で導入
+CropDecaySpeedMultiplier=<value>	Value = float
+Default = 1.0	数値が大きいほど、プロット内の作物の腐敗の速度が低下します（パーセンテージ）
+パッチ218.0で導入
+HairGrowthSpeedMultiplier=<value>	Value = float
+Default = 1.0	数字が大きいほど、髪の成長速度が上がります。
+パッチ254.0で導入
+
+StructureDamageRepairCooldown=<value>	Value= integer
+Default = 180	前回の損傷時からの構造修復のクールダウン期間のオプション。 デフォルトで180秒に設定し、無効にするには0
+パッチ222.0で導入
+
+bPvEAllowTribeWar=<value>	Value = boolean
+Default = True	Falseの場合、トライブが相互に合意した期間に互いに戦争を公式に宣言する機能を無効にします
+パッチ223.0で導入
+
+bPvEAllowTribeWarCancel=<value>	Value = boolean
+Default = False	Trueは、合意された戦争が実際に開始する前にキャンセルすることを許可します
+パッチ223.0で導入
+
+bPassiveDefensesDamageRiderlessDinos=<value>	Value = boolean
+Default = False	Trueは、スパイクウォールが野生/騎乗していない恐竜にダメージを与えることを許可します
+パッチ224.0で導入
+
+CustomRecipeEffectivenessMultiplier=<value>	Value = float
+Default = 1.0	数値を大きくすると、カスタムレシピの有効性が（パーセンテージで）増加します
+パッチ226.0で導入
+
+CustomRecipeSkillMultiplier=<value>	Value = float
+Default = 1.0	数値を大きくすると、カスタムレシピを作成する際の数式のベースとして使用される速度レベルを作成するプレーヤーの効果が（パーセンテージで）増加します
+パッチ226.0で導入
+
+DinoHarvestingDamageMultiplier=<value>	Value = float
+Default = 3.2	数字が大きいほど、ディノが収穫可能なアイテム/エンティティに与えるダメージが（パーセンテージで）増加します。 数字が大きいほど、より速く収集できます
+パッチ231.1で導入
+
+PlayerHarvestingDamageMultiplier=<value>	Value = float
+Default = 1.0	数字が大きくなると、プレイヤーが収穫可能なアイテム/エンティティに与えるダメージが（パーセンテージで）増加します。 数字が大きいほど、より速く収集できます
+パッチ231.1で導入
+
+DinoTurretDamageMultiplier=<value>	Value = float
+Default = 1.0	数字が大きくなると、タレットがディノに与えるダメージが（パーセンテージで）増加します
+パッチ231.4で導入
+
+bDisableLootCrates=<value>	Value = boolean
+Default = False	戦利品クレートのスポーンを防ぐ（アーティファクトの作成は引き続き発生します）
+パッチ231.7で導入
+
+SupplyCrateLootQualityMultiplier=<value>	Value = float
+Default = 1.0
+Range= 1 to 5	供給クレートに品質があるアイテムの品質を向上させます。 品質は難易度オフセットにも依存します。
+パッチ260.0で導入
+
+FishingLootQualityMultiplier=<value>	Value = float
+Default = 1.0
+Range= 1 to 5	釣りの際に品質を持つアイテムの品質を向上させます。
+パッチ260.0で導入
+
+KickIdlePlayersPeriod=<value>	Value = integer
+Default = 3600	移動または相互作用していないキャラクターがキックされるまでの時間（コマンドラインパラメーターとして-EnableIdlePlayerKickが設定されている場合）。
+パッチ241.5で導入
+
+TribeSlotReuseCooldown=<value>	Value = float
+Default = 0	タイマーとして機能するには、これを0より大きい数に設定します。 秒単位で値の部族スロットをロックします。したがって、3600の値は、誰かが部族を離れた場合、その場所を別のプレイヤーが1時間取得（または再参加）できないことを意味します。 公式の小規模部族サーバーで使用されます。
+パッチ280.114で導入
+
+MaxNumberOfPlayersInTribe=<value>	Value = float
+Default = 0	これを0より大きい数値に設定すると、制限として機能します。 1プレイヤートライブは効果的にトライブを無効にします
+パッチ242.0で導入
+
+BabyImprintingStatScaleMultiplier=<value>	Value = float
+Default = 1.0	刷り込み品質が統計にどの程度影響するか。 0に設定すると、システムが事実上無効になります。
+パッチ242.0で導入
+
+BabyCuddleIntervalMultiplier=<value>	Value = float
+Default = 1.0	赤ちゃんが抱きしめたい頻度。 より頻繁には、刷り込み品質を得るために、より頻繁に寄り添う必要があることを意味します。
+パッチ242.0で導入
+
+BabyCuddleGracePeriodMultiplier=<value>	Value = float
+Default = 1.0	刷り込み品質が低下し始める前に、赤ちゃんとの抱きしめを遅らせた後の長さの乗数。
+パッチ242.0で導入
+
+BabyCuddleLoseImprintQualitySpeedMultiplier=<value>	Value = float
+Default = 1.0	まだ赤ちゃんと抱き合っていない場合、猶予期間後にインプリント品質がどれだけ速く低下するかの乗数。
+パッチ242.0で導入
+
+ConfigOverrideItemCraftingCosts		例については、セクションConfigOverrideItemCraftingCostsを参照してください。
+現在、修理費用は変更されず、編集された構造物の払い戻しは取り消されません。 クラフトコストの削減に悪用される可能性があり、構造が修復不能になる可能性があります。
+
+注: 注：スタックmodを使用する場合、バニラリソースの代わりにmodの新しいリソースを参照してください（つまり：PrimalItemResource_Electronics_CではなくPrimalItemResource_Electronics_Child_C）
+
+パッチ242.0で導入
+
+ConfigOverrideSupplyCrateItems		例については、ConfigOverrideSupplyCrateItemsセクションを参照してください
+パッチ242.0で導入
+
+ExcludeItemIndices=<value>	Value = one Item ID	供給クレートからアイテムを除外します。 このオプションは複数行にできます。
+MaxTribeLogs=<value>	Value = integer
+Default = 100	各部族について表示される部族ログの数。
+パッチ224.0で導入
+
+PvPZoneStructureDamageMultiplier=<value>	Value = float
+Default = 6.0	構造物が洞窟内で受けるダメージのスケーリング係数を指定します。
+値が低いほど、構造物が受けるダメージが少なくなります（つまり、1.0に設定すると、洞窟内または洞窟の近くに構築された構造物は、サーフェスに構築されたものと同じ量のダメージを受けます）。
+パッチ187.0で導入
+bDisableDinoRiding=<value>	Value = boolean (true/false)
+Default = false	
+bDisableDinoTaming=<value>	Value = boolean (true/false)
+Default = false	
+bDisableStructurePlacementCollision=<value>	Value = boolean (true/false)
+Default = false	「true」の場合、構造物が地形にクリップされます。
+bAllowCustomRecipes=<value>	Value = boolean (true/false)
+Default = false	パッチ224.0で導入
+bAutoUnlockAllEngrams=<value>	Value = boolean(true/false)
+Default = false
+利用可能なすべてのエングラムのロックを解除します。Ignores OverrideEngramEntriesおよびOverrideNamedEngramEntriesエントリを無視します。
+
+パッチ273.62で導入
+
+EngramEntryAutoUnlocks=(
+EngramClassName="<index>",
+LevelToAutoUnlock=<value>
+)	
+index	text	エングラムクラス名
+value	integer	エングラムを自動的に
+ロック解除するために
+必要なレベル
+指定されたレベルに達すると、指定されたエングラムのロックを自動的に解除します
+この例では、レベル0でTek Teleporterのロックを解除します:
+EngramEntryAutoUnlocks=(
+ EngramClassName="EngramEntry_TekTeleporter_C",
+ LevelToAutoUnlock=0
+)
+パッチ273.62で導入
+
+bHardLimitTurretsInRange	Value = boolean (true/false)
+Default = false	パッチ278.0で導入
+bShowCreativeMode	Value = boolean (true/false)
+Default = false	クリエイティブモードを有効にします。
+パッチ278.0で導入
+
+PreventOfflinePvPConnectionInvincibleInterval	Value = float
+Default = 5.0	パッチ278.0で導入
+TamedDinoCharacterFoodDrainMultiplier	Value = float
+Default = 1.0	飼いならされた恐竜が食物を消費する速さの乗数。
+パッチ278.0で導入
+
+WildDinoCharacterFoodDrainMultiplier	Value = float
+Default = 1.0	野生の恐竜が食物を消費する速さの乗数。
+パッチ278.0で導入
+
+WildDinoTorporDrainMultiplier	Value = float
+Default = 1.0	野生の恐竜がどれほど速く気絶値を失うかの乗数。
+パッチ278.0で導入
+
+PassiveTameIntervalMultiplier	Value = float
+Default = 1.0	受動的飼いならされた恐竜の飼いならされた要求を取得する頻度の乗数。
+パッチ278.0で導入
+
+TamedDinoTorporDrainMultiplier	Value = float
+Default = 1.0	飼い慣らされた恐竜がどれほど速く気絶値を失うかの乗数。
+パッチ278.0で導入
+
+KillXPMultiplier	Value = float
+Default = 1.0	倒して獲得したXPの量をスケーリングする乗数
+パッチ243.0で導入
+HarvestXPMultiplier	Value = float
+Default = 1.0	収穫のために獲得したXPの量をスケーリングする乗数
+パッチ243.0で導入
+CraftXPMultiplier	Value = float
+Default = 1.0	クラフトで獲得したXPの量をスケーリングする乗数
+パッチ243.0で導入
+GenericXPMultiplier	Value = float
+Default = 1.0	ジェネリックXPで獲得したXPの量をスケーリングする乗数（時間の経過とともに自動化）
+パッチ243.0で導入
+SpecialXPMultiplier	Value = float
+Default = 1.0	SpecialEventsで獲得したXPの量をスケーリングする乗数
+パッチ243.0で導入
+[ModInstaller]
+ModIDS=<value>
+ModIDS=<value>
+ModIDS=<value>	Value = ModID	追加のSteam Workshop Mods/Maps/TC IDの手動リストを指定して、Game.iniでダウンロード/インストール/更新します（実際にゲーム内で実際に使用するには、通常どおりcommandline（-automanagedmods）を使用）
+パッチ244.3で導入
+FastDecayInterval	Value =integer
+Default = 43200	「高速崩壊」建造物（柱や孤立した基礎など）の固定定数減衰期間に対してこのオプションを有効にします。 値は秒単位です。
+MaxAlliancesPerTribe	Value = integer
+Default = N/A	トライブが形成または参加できる最大の同盟を定義します。
+MaxTribesPerAlliance	Value = integer
+Default = N/A	同盟内のトライブの最大数を定義します。
+bUseTameLimitForStructuresOnly	Value = boolean	trueの場合、Tame Unitsは、建造物といかだを備えたプラットフォームにのみ適用および使用され、プラットフォーム建造物を持たない恐竜のTame Unitsを効果的に無効にします。
+UseCorpseLifeSpanMultiplier	Value = float	死体を修正とドロップボックスの寿命
+パッチ275.0で導入
+FuelConsumptionIntervalMultiplier	Value = float
+Default = 1.0	燃料消費の間隔を定義します。
+パッチ264.0で導入
+
+GlobalPoweredBatteryDurabilityDecreasePerSecond	Value = float
+Default = 4	パッチ278.0で導入
+DestroyTamesOverLevelClamp﻿	Value = integer
+Default = 0	そのレベルを超えるテイム生物は、サーバーの起動時に削除されます。 公式サーバーでは、449に設定されています。
+パッチ255.0で導入
+
+LimitNonPlayerDroppedItemsRange	Value = integer
+Default = 0	エリア内のドロップされたアイテムの数を制限します（LimitNonPlayerDroppedItemsCountとともに）。 公式サーバーでは1600に設定されています
+パッチ302.4で導入
+
+LimitNonPlayerDroppedItemsCount	Value = integer
+Default = 0	エリア内のドロップされたアイテムの数を制限します（LimitNonPlayerDroppedItemsRangeとともに）。 公式サーバーでは600に設定されています
+パッチ302.4で導入
+
+MaxFallSpeedMultiplier	Value = float
+Default = 1.0	プレイヤーが落下ダメージを受け始める落下速度倍率を定義します。落下速度は、Z軸の速度がマイナスされている間にプレイヤーが空中で過ごした時間に基づいており、この設定が高いほど、プレイヤーが落下ダメージを受けずに落下できる時間が長くなります。
+例えば、0.1に設定すると、プレイヤーは通常のジャンプでは生き残れなくなり、100.0など非常に高く設定すると、プレイヤーは上空限界からの落下などでも生き残れるようになる。
+この設定はプレイヤーの重力スケールには影響しないため、キャラクターの動きに物理的な違いは生じません。
+パッチ279.224で導入
+
+MaxFallSpeedMultiplier	Value = float
+Default = 1.0	プレイヤーが落下ダメージを受け始める落下速度倍率を定義します。落下速度は、Z軸の速度がマイナスされている間にプレイヤーが空中で過ごした時間に基づいており、この設定が高いほど、プレイヤーが落下ダメージを受けずに落下できる時間が長くなります。
+例えば、0.1に設定すると、プレイヤーは通常のジャンプでは生き残れなくなり、100.0など非常に高く設定すると、プレイヤーは上空限界からの落下などでも生き残れるようになる。
+この設定はプレイヤーの重力スケールには影響しないため、キャラクターの動きに物理的な違いは生じません。
+パッチ279.224で導入
+
+bIgnoreStructuresPreventionVolumes	Value = boolean
+Default = true	Genesis Part1で、ミッション・ボリューム内の建築を有効化する。
+bGenesisUseStructuresPreventionVolumes	Value = boolean
+Default = true	Genesis Part1で、trueに設定されている場合、ミッション・エリア内の建築を無効化する。
+bAllowFlyerSpeedLeveling	Value = boolean
+Default = true	trueに設定されている場合、すべての飛行生物の移動速度のレベルアップを有効化する。
+パッチ321.1で導入。
+
+CraftingSkillBonusMultiplier	Value = float
+Default = 1.0	クラフティングスキルを向上させることで得られるボーナスの倍率。
+パッチ259.32で導入。
+
+広告
+
+Genesis
+オプション	型	初期値	効果
+bDisableDefaultMapItemSets	boolean	false	trueを指定することで、Genesis Part2でTekスーツを着用した状態でのスポーンを無効化する。
+パッチ329.7で適用。
+
+タレット制限関連
+bLimitTurretsInRange=<overrride>
+LimitTurretsRange=<range>
+LimitTurretsNum=<turrets>
+引数:
+
+override	boolean	trueの場合、制限を有効にします
+range	integer	タレットを追加するエリアの限界を決定します。値はUE4の単位です
+turrets	integer	エリアで許可されるタレットの最大数を決定します
+特定の範囲内で許可される自動化された最大砲塔(Plant Species Xを含む)を制限します。
+パッチ274.0で導入
+
+エングラムエントリ
+OverrideEngramEntries=(EngramIndex=<index>
+[,EngramHidden=<hidden>]
+[,EngramPointsCost=<cost>]
+[,EngramLevelRequirement=<level>]
+[,RemoveEngramPreReq=<remove_prereq>])
+OverrideNamedEngramEntries=(EngramClassName="<class_name>"
+[,EngramHidden=<hidden>]
+[,EngramPointsCost=<cost>]
+[,EngramLevelRequirement=<level>]
+[,RemoveEngramPreReq=<remove_prereq>])
+引数:
+
+index	integer	エングラムのインデックス
+class_name	integer	エングラムのクラス名
+hidden	false	trueの場合、プレーヤーのエングラムパネルでエングラムを非表示にします
+cost	integer	エングラムを学習するために必要なエングラムポイント
+level	integer	エングラムを学習するために必要な最小レベル
+remove_prereq	true|false	エングラムを学習するために必要なエングラムポイント
+説明:
+
+エングラムを学習するためのステータスと要件を設定します。OverrideEngramEntriesの場合、EngramIndex引数は常に必要です。OverrideNamedEngramEntriesの場合、EngramClassName引数は常に必要です。 残りはオプションですが、オプションを有効にするには少なくとも1つを指定する必要があります。 このオプションは、設定するエングラムごとにGame.iniで1回繰り返すことができます。
+
+ここで提供される例は、スペースを考慮して複数の行に分割されています。 構成ファイルでは、エントリは完全に1行に配置する必要があります。 ファイルには複数のOverrideEngramEntriesおよびOverrideNamedEngramEntriesエントリを指定できますが、 EngramIndexおよびEngramClassNameの値は複数のエントリ間で繰り返さないでください。
+
+エングラムインデックスおよびエングラムクラス名については、Engram classnamesを参照してください。
+
+例:
+
+OverrideEngramEntries=(EngramIndex=0, EngramHidden=false)
+OverrideEngramEntries=(EngramIndex=1, EngramHidden=false, EngramPointsCost=3, EngramLevelRequirement=3, RemoveEngramPreReq=true)
+OverrideNamedEngramEntries=(EngramClassName="EngramEntry_Campfire_C",  EngramHidden=false)
+OverrideNamedEngramEntries=(EngramClassName="EngramEntry_StoneHatchet_C", EngramHidden=false, EngramPointsCost=3, EngramLevelRequirement=3, RemoveEngramPreReq=true)
+広告
+
+生物のスポーン関連
+ConfigAddNPCSpawnEntriesContainer
+
+ConfigAddNPCSpawnEntriesContainer=(
+[NPCSpawnEntriesContainerClassString=<spawn_class>],
+[NPCSpawnEntries=((AnEntryName=<spawn_name>],
+[EntryWeight=<factor>],
+[NPCsToSpawnStrings=(<entity_id>)))],
+[NPCSpawnLimits=((NPCClassString=<entity_id>],
+[MaxPercentageOfDesiredNumToAllow=<percentage>)))]
+引数:
+
+spawn_class	string	クラス文字列のスポーン、Spawn Entriesを参照
+spawn_name	string	スポーン名
+factor	float	このスポーンの重量係数
+entity_id	string	追加する恐竜またはクリーチャーのエンティティID。Creature IDsを参照してください
+percentage	float	このインスタンスの最大許容恐竜またはクリーチャーを設定します
+指定された恐竜/クリーチャーが、指定された場所に限定されたスポーナーを介して、指定された場所に直接スポーンできるようにします。 行/設定ごとに1つの恐竜/生き物を使用します。
+
+例: ビーチスポーンエリアに1つのギガノトサウルスを追加します。
+
+ConfigAddNPCSpawnEntriesContainer=(
+ NPCSpawnEntriesContainerClassString="DinoSpawnEntriesBeach_C",
+ NPCSpawnEntries=((AnEntryName="GigaSpawner", EntryWeight=1000.0, NPCsToSpawnStrings=("Gigant_Character_BP_C"))),
+ NPCSpawnLimits=((NPCClassString="Gigant_Character_BP_C", MaxPercentageOfDesiredNumToAllow=0.01))
+)
+改行とスペースは、例を読みやすくするためにここにあります。 構成ファイルの1行として保管してください。
+
+パッチ248.0で導入
+
+ConfigSubtractNPCSpawnEntriesContainer
+
+ConfigSubtractNPCSpawnEntriesContainer=(
+[NPCSpawnEntriesContainerClassString=<spawn_class>],
+[NPCSpawnEntries=((NPCsToSpawnStrings=(<entity_id>)))],
+[NPCSpawnLimits=((NPCClassString=<entity_id>)))]
+引数:
+
+spawn_class	string	クラス文字列のスポーン、Spawn Entriesを参照
+entity_id	string	削除する恐竜またはクリーチャーのエンティティID。Creature IDsを参照
+指定した場所から指定した恐竜/生き物を完全に削除します。 複数の恐竜/生き物を指定できます。
+
+参照されるエンティティIDまたはスポーンクラスが各行で異なる場合でも、同じスポーンエントリを複数の行で参照してすべてを有効にすることはできません。 同じスポーンエントリから複数の恐竜/クリーチャーを削除する場合は、1行で削除します。
+
+例: ビーチからTrikeとPterosを削除します。
+
+ConfigSubtractNPCSpawnEntriesContainer=(
+ NPCSpawnEntriesContainerClassString="DinoSpawnEntriesBeach_C",
+ NPCSpawnEntries=(
+  (NPCsToSpawnStrings=("Trike_Character_BP_C")),
+  (NPCsToSpawnStrings=("Ptero_Character_BP_C"))
+ ),
+ NPCSpawnLimits=(
+  (NPCClassString="Trike_Character_BP_C"),
+  (NPCClassString="Ptero_Character_BP_C")
+ )
+)
+改行とスペースは、例を読みやすくするためにここにあります。 構成ファイルの1行として保管してください。
+
+パッチ248.0で導入
+
+ConfigOverrideNPCSpawnEntriesContainer
+
+ConfigOverrideNPCSpawnEntriesContainer=(
+[NPCSpawnEntriesContainerClassString=<spawn_class>],
+[NPCSpawnEntries=((AnEntryName=<spawn_name>],
+[EntryWeight=<factor>],
+[NPCsToSpawnStrings=(<entity_id>)))],
+[NPCSpawnLimits=((NPCClassString=<entity_id>],
+[MaxPercentageOfDesiredNumToAllow=<percentage>)))]
+引数:
+
+spawn_class	string	クラス文字列のスポーン、Spawn Entriesを参照
+spawn_name	string	スポーン名
+factor	float	このスポーンの重量係数
+entity_id	string	他のスポーンをオーバーライドする恐竜またはクリーチャーのエンティティID。Creature IDsを参照
+percentage	float	このインスタンスの最大許容ディノまたはクリーチャーを設定します
+指定された恐竜で指定された領域内のすべての恐竜/生き物をオーバーライドし、特定の恐竜/生き物の産卵専用の領域を可能にします。 放浪者がその場所に入ることを妨げません。
+
+例：RexesとCarnosのみを山岳地域でスポーンさせたい場合
+
+ConfigOverrideNPCSpawnEntriesContainer=(
+ NPCSpawnEntriesContainerClassString="DinoSpawnEntriesMountain_C",
+ NPCSpawnEntries=(
+  (AnEntryName="CarnoSpawner", EntryWeight=1.0, NPCsToSpawnStrings=("Carno_Character_BP_C")),
+  (AnEntryName="RexSpawner", EntryWeight=1.0, NPCsToSpawnStrings=("Rex_Character_BP_C"))
+ ),
+ NPCSpawnLimits=(
+  (NPCClassString="Carno_Character_BP_C", MaxPercentageOfDesiredNumToAllow=0.5),
+  (NPCClassString="Rex_Character_BP_C", MaxPercentageOfDesiredNumToAllow=0.5)
+ )
+)
+改行とスペースは、例を読みやすくするためにここにあります。 構成ファイルの1行として保管してください。
+
+パッチ248.0で導入
+
+DinoSpawnWeightMultipliers
+
+DinoSpawnWeightMultipliers=(
+DinoNameTag=<tag>
+[,SpawnWeightMultiplier=<factor>]
+[,OverrideSpawnLimitPercentage=<override>]
+[,SpawnLimitPercentage=<limit>])
+引数:
+
+tag	string	調整する恐竜の種類。Creature IDs (column Entity ID)を参照
+factor	float	このタイプの重み係数
+override	false	trueの場合、指定されたSpawnLimitPercentageを使用します
+limit	float	このタイプの最大パーセンテージ（すべてのスポーンのうち）
+特定の恐竜タイプの出現率をカスタマイズします（すべての恐竜の出現ポイントで）。SpawnWeightMultiplierが大きいタイプは、新しい恐竜をスポーンするときに、乗数が小さいタイプよりも頻繁に選択されます。OverrideSpawnLimitPercentageが指定されている場合（およびtrue）、乗数に関係なく、SpawnLimitPercentage * 100％の時間を超えてタイプがスポーンされることはありません。 たとえば、0.25のSpawnLimitPercentageは、タイプが25％を超えないスポーン用に選択されることを指定します。
+
+ここで提供される例は、スペースを考慮して複数の行に分割されています。 構成ファイルでは、エントリは完全に1行に配置する必要があります。 複数のDinoSpawnWeightMultipliersエントリをファイルに指定できますが、DinoNameTagの値は複数のエントリにまたがって繰り返さないでください。
+
+DinoSpawnWeightMultipliers=(
+ DinoNameTag=Bronto,
+ SpawnWeightMultiplier=10.0,
+ OverrideSpawnLimitPercentage=true,
+ SpawnLimitPercentage=0.5
+)
+改行とスペースは、例を読みやすくするためにここにあります。 構成ファイルの1行として保管してください。
+
+NPCReplacements
+
+NPCReplacements=(FromClassName="<classname>", ToClassName="<classname>")
+引数:
+
+classname	string	クラス文字列の生成、Creature IDs (column Entity ID)を参照
+これを使用して、特定のアルファクリーチャーを無効にしたり、特定のNPC（NPC =非プレイヤーキャラクター、つまり恐竜）のスポーンを別のNPCのスポーンに置き換えたり、特定のNPCスポーンを完全に無効にしたりできます。
+
+NPCReplacements=(FromClassName="MegaRaptor_Character_BP_C", ToClassName="Dodo_Character_BP_C")
+パッチ196.0で導入
+
+広告
+
+プレーヤーの基本ステータスの乗数
+PlayerBaseStatMultipliers[<attribute>]=<multiplier>
+引数:
+
+attribute	integer	
+0: 体力
+1: スタミナ / 充電容量
+2: 気絶値
+3: 酸素量 / 充電速度
+4: 食料
+5: 水分
+6: 気温
+7: 重量
+8: 近接攻撃力 / 放電範囲
+9: 移動速度
+10: 忍耐力
+11: 作製スキル
+
+multiplier	float	Default = 1.0, デフォルト値については以下の表を参照
+デフォルト値を乗算することにより、プレーヤーの基本ステータスを変更します。 新しいスポーンキャラクターの開始ステータスを意味します。
+
+パッチ254.6で導入
+
+デフォルト値:
+
+Attribute	デフォルト	出力
+0 体力	1.0	100.0
+1 スタミナ	1.0	100.0
+2 気絶値	1.0	200.0 (合計値に関係なく50で意識がなくなります)
+3 酸素量	1.0	100.0
+4 食料	1.0	100.0
+5 水分	1.0	100.0
+6 気温	0.0	0.0 (未使用のステータス)
+7 重量	1.0	100.0
+8 近接攻撃力	0.0	100% (ベースを増やすことはできません)
+9 移動速度	0.0	100% (ベースを増やすことはできません)
+10 忍耐力	0.0	0 (ベースを増やすことはできません)
+11 作製スキル	0.0	100% (ベースを増やすことはできません)
+広告
+
+レベルごとのステータスの乗数
+PerLevelStatsMultiplier_Player[<attribute>]=<multiplier>
+PerLevelStatsMultiplier_DinoTamed<type>[<attribute>]=<multiplier>
+PerLevelStatsMultiplier_DinoWild[<attribute>]=<multiplier>
+引数:
+
+type	text	
+no type given: 調整された各レベルアップポイントに適用される乗数
+_Add: 飼い慣らされた恐竜にすぐに乗数が追加されます
+_Affinity: アフィニティに応じて適用される乗数
+
+attribute	integer	
+0: 体力
+1: スタミナ / 充電容量
+2: 気絶値
+3: 酸素量 / 充電速度
+4: 食料
+5: 水分
+6: 気温
+7: 重量
+8: 近接攻撃力 / 放電範囲
+9: 移動速度
+10: 忍耐力
+11: 作製スキル
+
+multiplier	float	Default = 1.0または以下の表を参照
+各レベルで獲得するステータス量を変更できます。
+例: PerLevelStatsMultiplier_Player[7]=2.0は、レベルごとの重量増加がプレイヤーのデフォルトの2倍であることを意味します。
+PerLevelStatsMultiplier_Playerは、プレーヤーの量を変更します。
+PerLevelStatsMultiplier_DinoTamedは、飼いならされた恐竜の量を変更します。
+PerLevelStatsMultiplier_DinoWildは、野生の恐竜の量を変更します。
+値を0に設定するとデフォルトで1.0になるため、統計情報の取得をほぼ無効にするには0.01を使用します。
+
+飼い慣らされた恐竜の体力に影響するさまざまなタイプの例:
+
+PerLevelStatsMultiplier_DinoTamed[0]=1.0
+PerLevelStatsMultiplier_DinoTamed_Add[0]=1.0
+PerLevelStatsMultiplier_DinoTamed_Affinity[0]=1.0
+パッチ202.0で導入
+
+デフォルト値:
+
+能力値	野生	テイム	Tamed_Add	Tamed_Affinity
+0 体力	1	0.2	0.14	0.44
+1 スタミナ	1	1	1	1
+2 気絶値	1	1	1	1
+3 酸素量	1	1	1	1
+4 食料	1	1	1	1
+7 重量	1	1	1	1
+8 近接攻撃力	1	0.17	0.14	0.44
+9 移動速度	1	1	1	1
+bUseSingleplayerSettings=trueの場合、構成された（またはデフォルトの）値に次の乗数が追加で適用されます。
+
+能力値	テイム	Tamed_Add	Tamed_Affinity
+0 Health	× 2.125	× 3.571	× 2.273
+8 Damage	× 2.353	× 3.571	× 2.273
+広告
+
+アイテムの作成コストの構成変更
+ConfigOverrideItemCraftingCosts=(ItemClassString="PrimalItem_WeaponStoneHatchet_C",BaseCraftingResourceRequirements=((ResourceItemTypeString="PrimalItemResource_Thatch_C",BaseResourceRequirement=1.0,bCraftingRequireExactResourceType=false),(ResourceItemTypeString="PrimalItemAmmo_ArrowStone_C",BaseResourceRequirement=2.0,bCraftingRequireExactResourceType=false)))
+
+ConfigOverrideItemCraftingCosts=(ItemClassString="PrimalItem_WeaponTorch_C",BaseCraftingResourceRequirements=((ResourceItemTypeString="PrimalItemConsumable_RawMeat_C",BaseResourceRequirement=3.0,bCraftingRequireExactResourceType=false),(ResourceItemTypeString="PrimalItemConsumable_CookedMeat_C",BaseResourceRequirement=2.0,bCraftingRequireExactResourceType=false)))
+これは、斧を作成する方法の例であり、クラフトするために1つのわらと2つの石の矢が必要です。 トーチを作るには、生の肉3枚と調理済みの肉2枚が必要です（知っているので、肉トーチは最高のトーチです！）
+
+すべてのアイテムクラス文字列は、開発キットに含まれています。
+
+供給クレートアイテムの無効の構成
+ConfigOverrideSupplyCrateItems=(SupplyCrateClassString="SupplyCrate_Level03_C",MinItemSets=1,MaxItemSets=1,NumItemSetsPower=1.0,bSetsRandomWithoutReplacement=true,ItemSets=((MinNumItems=2,MaxNumItems=2,NumItemsPower=1.0,SetWeight=1.0,bItemsRandomWithoutReplacement=true,ItemEntries=((EntryWeight=1.0,ItemClassStrings=("PrimalItemResource_Stone_C"),ItemsWeights=(1.0),MinQuantity=10.0,MaxQuantity=10.0,MinQuality=1.0,MaxQuality=1.0,bForceBlueprint=false,ChanceToBeBlueprintOverride=0.0),(EntryWeight=1.0,ItemClassStrings=("PrimalItemResource_Thatch_C"),ItemsWeights=(1.0),MinQuantity=10.0,MaxQuantity=10.0,MinQuality=1.0,MaxQuality=1.0,bForceBlueprint=false,ChanceToBeBlueprintOverride=0.0)))))
+これは、通常のレベル3の供給クレートに含まれるアイテムを完全に無効にして、たとえば石とわらだけを含める方法の例です。
+
+v273.7以降、SupplyCrateClassStringもクラス名の一部を取ります。 例えば、「SupplyCrate」は、すべての供給クレートをオーバーライドします。 bAppendItemSets=trueを設定して、すべてのアイテムを完全にオーバーライドするのではなく、クレートを提供するアイテムセットを追加することもできます。 また、bAppendPreventIncreasingMinMaxItemSets=trueを設定して、追加する多くの追加アイテムセットによってドロップされるアイテムの量を動的に増やすことができます(bAppendItemSets=trueの場合にのみ適用されます)。
+
+もちろん、すべてのアイテムクラス文字列とサプライクレート名は、ARK Dev KitおよびBeacon IDsページにあります！
+
+Tutorial: Modify loot crate contents (v242)
+
+広告
+
+アイテムスタックの固定
+NOTE: 注：サーバーで固定を有効にするには、コマンドライン引数ClampItemStatsをtrueに設定する必要があります。Command Line Syntaxを参照してください。
+
+ItemStatClamps[<attribute>]=<value>
+引数:
+
+attribute	integer	
+0: Generic Quality
+1: Armor
+2: Max Durability﻿
+3: Weapon Damage Percent
+4: Weapon Clip Ammo
+5: Hypothermal Insulation
+6: W﻿eigh﻿﻿﻿t
+7: Hyperthermal Insulation
+
+value	integer	使用されるアルゴリズムは次のように見えます:
+<Initial Value Constant> + ((<ItemStatClamps[<attribute>]> * <State Modifier Scale>) * (<Randomizer Range Multiplier> * <Initial Value Constant>))
+
+各アイテムには、開発キットに含まれる固有のデータがあります。
+
+たとえば、以下は、ArmorとWeapon Damage Percentの公式サーバーと同じ固定を保持するために必要な値です:
+
+ItemStatClamps[1]=19800
+ItemStatClamps[3]=19800
+これは、Saddlesの防御を124.0(Doedicurus、Rock Elementalなどの「タンク」生物の場合は74.5)に、Flak Armor piecespieces496.0に、Longneck Rifleのダメージを298.0%などに固定します。
+
+警告: これにより、既存のアイテムのステータスが永続的に変更されるため、クランプ値を変更して再生する前に、現在の保存をバックアップしてください。
+
+管理者ホワイトリスト
+プレーヤーは、SteamIDを介してサーバーの管理者としてホワイトリストに登録できます。 これらのプレーヤーは、enablecheatsコマンド（後述）を使用して自分自身を認証したかのように、サーバー上でチートコマンドを自動的に使用できます。
+
+管理者をホワイトリストに登録するには、ShooterGame/Saved/AllowedCheaterSteamIDs.txtファイルを作成します。 ファイルに、各プレーヤーのSteamIDを1行に1つずつリストします。
+
+接続されているすべてのプレーヤーのSteamIDは、cheat ListPlayersコマンドを使用してゲーム内でリストできます。cheat KickPlayerコマンドを使用して、プレイヤーを（SteamIDを使用して）サーバーからキックできます。詳細については、次のセクションを参照してください。
+
+Note: この方法を使用する場合、サーバー管理者のパスワードを指定する必要はありません。 パスワードは引き続き指定でき、ホワイトリストにないプレーヤーが管理者権限を取得するために使用できますが、サーバーはパスワードなしでも機能し、ホワイトリストに登録された管理者に自動的に権限を付与します。
+
+広告
+
+クロスARKデータ転送
+Cross-ARKデータ転送の仕組み [2]
+
+1.オフィシャルの場合、サプライクレートまたはトリビュートターミナルで利用可能な「ARKトリビュート」オプションを使用して、TheIslandまたはTheCenterから生存者を「アップロード」できます。 その後、これらのサバイバーを同じゲームモードの公式ScorchedEarthサーバーに「ダウンロード」できます。 現時点では、生存者のみがScorchedEarthへの移動を許可されています（アイテムを置くことはできません）。 ただし、ScorchedEarthからSurvivors、Items、およびDinosを転送し、それらを（ARK Tribute経由で）TheIslandまたはTheCenterにダウンロードできます。 したがって、実際にすべてのScorchedEarthアイテム、恐竜、および生存者（したがってScorched Earthエングラム）をTheIslandまたはTheCenterに持ち込んで、その能力を拡張できます。 この方法を使用してARK間でサバイバーを転送する場合、部族を保持する必要があります。 ただし、アライアンスは保持されず、反対側で再セットアップする必要があります。
+
+2.非公式サーバーの場合、動的なクロスARK移動を許可する場合、同じディレクトリから同じボックスで2つのサーバーを実行する必要があり、次のコマンドラインで起動できます:
+
+ShooterGameServer.exe ScorchedEarth_P?SessionName=MySession1?AltSaveDirectoryName=Save1 -NoTransferFromFiltering -clusterid=mycluster123
+ShooterGameServer.exe TheIsland?SessionName=MySession2?AltSaveDirectoryName=Save2  -NoTransferFromFiltering  -clusterid=mycluster123
+(clusteridはサーバー間で同じでなければなりません！)
+(保存による衝突を避けるために、各サーバーは異なる値を使用する必要があります: ?AltSaveDirectoryName=<SaveFolderName>)
+
+次のようなオプションもあります:
+
+?PreventDownloadSurvivors=False
+?PreventDownloadItems=False
+?PreventDownloadDinos=False
+?PreventUploadSurvivors=False
+?PreventUploadItems=False
+?PreventUploadDinos=False
+247.85 では、次の起動パラメーターを各サーバーに追加することにより、同じマシンで実行されている複数のサーバー間で機能する共通のクロスサーバーストレージの場所を指定する機能が追加されました:
+
+-ClusterDirOverride=C:/TestStorage/
+3.一方、シングルプレイヤーでは、「ARK Tribute」オプションを使用して、メインメニューに戻り、他のマップでホストし、それに応じてデータをダウンロードできます。

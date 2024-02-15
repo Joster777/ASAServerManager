@@ -1,0 +1,28 @@
+
+
+[2024-02-02 05:12:49] Client version: 1705108307
+[2024-02-02 05:12:49] RequestAppInfoUpdate: AppIDs 7
+[2024-02-02 05:12:49] Change number 0->22158480, apps: 0/0, packages: 0/0
+[2024-02-02 05:12:49] Requesting 1 apps, 1 packages (meta data, 1024 prev attempts, expected 0 KB)
+[2024-02-02 05:12:50] Downloaded 1 apps via HTTP, 13 KB (3 KB compressed)
+[2024-02-02 05:12:50] Requesting 0 apps, 1 packages (full data, 1024 prev attempts, expected 28 KB)
+[2024-02-02 05:12:50] UpdatesJob: finished OK, apps updated 1 (13 KB), packages updated 1 (28 KB)
+[2024-02-02 05:12:50] Requesting 1140 apps, 0 packages (meta data, 1024 prev attempts, expected 53 KB)
+[2024-02-02 05:12:51] Requested 126 app access tokens, 52 received, 74 denied
+[2024-02-02 05:12:51] Updated SHAs with 52 new access tokens
+[2024-02-02 05:12:52] Downloaded 189 apps via HTTP, 4745 KB (1259 KB compressed)
+[2024-02-02 05:12:52] Requesting 951 apps, 0 packages (full data, 1024 prev attempts, expected 3016 KB)
+[2024-02-02 05:12:52] UpdatesJob: finished OK, apps updated 1140 (7716 KB), packages updated 0 (0 KB)
+[2024-02-02 05:12:52] RequestAppInfoUpdate: AppIDs 2430930
+[2024-02-02 05:12:52] Requesting 1 apps, 0 packages (meta data, 1024 prev attempts, expected 0 KB)
+[2024-02-02 05:12:53] UpdatesJob: finished OK, apps updated 0 (0 KB), packages updated 0 (0 KB)
+[2024-02-02 05:13:07] Starting async write F:\WorkSpase\project\ARK_Server_Manager\SteamCMD/appcache/appinfo.vdf (5436 KB)
+[2024-02-02 05:20:08] Packages changed: force all
+[2024-02-02 05:20:08] Apps changed: 530870=22158547,293030=22158527,238430=22158487,
+[2024-02-02 05:20:08] Change number 22158480->22158548, apps: 3/63, packages: 0/0
+[2024-02-02 05:20:08] Requesting 77 apps, 1 packages (meta data, 1024 prev attempts, expected 3 KB)
+[2024-02-02 05:20:09] Requested 74 app access tokens, 0 received, 74 denied
+[2024-02-02 05:20:09] Downloaded 1 apps via HTTP, 11 KB (3 KB compressed)
+[2024-02-02 05:20:09] Requesting 2 apps, 0 packages (full data, 1024 prev attempts, expected 9 KB)
+[2024-02-02 05:20:09] UpdatesJob: finished OK, apps updated 3 (20 KB), packages updated 0 (0 KB)
+[2024-02-02 05:20:24] Starting async write F:\WorkSpase\project\ARK_Server_Manager\SteamCMD/appcache/appinfo.vdf (5436 KB)

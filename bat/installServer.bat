@@ -1,0 +1,1 @@
+%1SteamCMD\\steamcmd.exe +force_install_dir ../%2/ +login anonymous +app_update 2430930 validate + quit

@@ -1,0 +1,118 @@
+
+
+[2024-02-02 05:12:47] Client version: 1705108307
+[2024-02-02 05:12:47] Load failed: F:\WorkSpase\project\ARK_Server_Manager\SteamCMD\steamapps\libraryfolders.vdf.
+[2024-02-02 05:12:47] Load failed: F:\WorkSpase\project\ARK_Server_Manager\SteamCMD\config\libraryfolders.vdf.
+[2024-02-02 05:12:47] Steam library folders configuration will be reset.
+[2024-02-02 05:12:47] No install folder configuration files found.
+[2024-02-02 05:12:49] Loaded 0 apps from install folder "f:\workspase\project\ark_server_manager\servers\tkbone\steamapps\appmanifest_*.acf".
+[2024-02-02 05:12:49] Triggered async write of Steam library folders configuration (1 libraries).
+[2024-02-02 05:12:53] AppID 2430930 state changed : Update Required,
+[2024-02-02 05:12:53] AppID 2430930 user config changed : added depots 1004,2430931
+[2024-02-02 05:12:53] AppID 2430930 scheduler update : Priority First, not played for 4294967295 seconds, update disabled for 0 seconds
+[2024-02-02 05:12:53] AppID 2430930 state changed : Update Required,Update Queued,
+[2024-02-02 05:12:53] AppID 2430930 config changed : added depots 1004,2430931
+[2024-02-02 05:12:53] AppID 2430930 state changed : Update Required,Update Queued,Update Running,
+[2024-02-02 05:12:53] AppID 2430930 update changed : Running Update,
+[2024-02-02 05:12:53] AppID 2430930 update changed : Running Update,Reconfiguring,
+[2024-02-02 05:12:53] AppID 2430930 scheduler update : Priority First, not played for 4294967295 seconds, update disabled for 0 seconds
+[2024-02-02 05:12:53] Got 11 download sources and 0 caching proxies via ContentServerDirectoryService::BYieldingGetServersForSteamPipe (CellID 32 / Launcher 3)
+[2024-02-02 05:12:53] Moving to source priority class '4'
+[2024-02-02 05:12:53] Created download interface of type 'SteamCache' (7) to host cache1-tyo3.steamcontent.com (cache1-tyo3.steamcontent.com)
+[2024-02-02 05:12:53] Created download interface of type 'SteamCache' (7) to host cache4-tyo3.steamcontent.com (cache4-tyo3.steamcontent.com)
+[2024-02-02 05:12:53] Created download interface of type 'SteamCache' (7) to host cache2-tyo3.steamcontent.com (cache2-tyo3.steamcontent.com)
+[2024-02-02 05:12:53] HTTP/2 available
+[2024-02-02 05:12:53] Created dual-stack http client
+[2024-02-02 05:12:54] HTTPS (SteamCache,183) - cache1-tyo3.steamcontent.com ([2404:3fc0:a:100::4]:443 / [2404:3fc0:a:100::4]:443, host: cache1-tyo3.steamcontent.com): Negotiated HTTP/2
+[2024-02-02 05:12:54] HTTP/2 (SteamCache,183) - cache1-tyo3.steamcontent.com ([2404:3fc0:a:100::4]:443 / [2404:3fc0:a:100::4]:443, host: cache1-tyo3.steamcontent.com): cache1-tyo3.steamcontent.com/depot/1004/manifest/1923798258558304932/5/9833169945158618347 - received 200 (OK) HTTP response
+[2024-02-02 05:12:54] HTTP/2 (SteamCache,183) - cache1-tyo3.steamcontent.com ([2404:3fc0:a:100::4]:443 / [2404:3fc0:a:100::4]:443, host: cache1-tyo3.steamcontent.com): cache1-tyo3.steamcontent.com/depot/2430931/manifest/122022057987947981/5/3237497481464465866 - received 200 (OK) HTTP response
+[2024-02-02 05:12:54] AppID 2430930 update changed : Running Update,
+[2024-02-02 05:12:54] AppID 2430930 update changed : Running Update,Validating,
+[2024-02-02 05:12:54] AppID 2430930 update changed : Running Update,
+[2024-02-02 05:12:54] AppID 2430930 update changed : Running Update,Preallocating,
+[2024-02-02 05:12:54] AppID 2430930 preallocated 66 files (9032 MB) 
+[2024-02-02 05:12:54] AppID 2430930 update changed : Running Update,
+[2024-02-02 05:12:55] AppID 2430930 update started : download 0/7616880272, store 0/0, reuse 0/0, delta 0/0, stage 0/9474038310 
+[2024-02-02 05:12:55] AppID 2430930 state changed : Update Required,Update Queued,Update Running,Update Started,
+[2024-02-02 05:12:55] AppID 2430930 update changed : Running Update,Downloading,Staging,
+[2024-02-02 05:12:55] Downloading 45 chunks from depot 1004
+[2024-02-02 05:12:55] HTTPS (SteamCache,184) - cache2-tyo3.steamcontent.com ([2404:3fc0:a:100::5]:443 / [2404:3fc0:a:100::5]:443, host: cache2-tyo3.steamcontent.com): Negotiated HTTP/2
+[2024-02-02 05:12:55] HTTPS (SteamCache,68) - cache4-tyo3.steamcontent.com ([2404:3fc0:a:100::7]:443 / [2404:3fc0:a:100::7]:443, host: cache4-tyo3.steamcontent.com): Negotiated HTTP/2
+[2024-02-02 05:12:56] Downloading 9546 chunks from depot 2430931
+[2024-02-02 05:13:06] Increasing target number of download connections to 4 (rate was 0.000, now 113.576)
+[2024-02-02 05:13:06] Created download interface of type 'SteamCache' (7) to host cache8-tyo3.steamcontent.com (cache8-tyo3.steamcontent.com)
+[2024-02-02 05:13:13] HTTPS (SteamCache,369) - cache8-tyo3.steamcontent.com ([2404:3fc0:a:100::b]:443 / [2404:3fc0:a:100::b]:443, host: cache8-tyo3.steamcontent.com): Negotiated HTTP/2
+[2024-02-02 05:13:43] Increasing target number of download connections to 5 (rate was 113.576, now 142.398)
+[2024-02-02 05:13:43] Created download interface of type 'SteamCache' (7) to host cache3-tyo3.steamcontent.com (cache3-tyo3.steamcontent.com)
+[2024-02-02 05:13:43] HTTPS (SteamCache,67) - cache3-tyo3.steamcontent.com ([2404:3fc0:a:100::6]:443 / [2404:3fc0:a:100::6]:443, host: cache3-tyo3.steamcontent.com): Negotiated HTTP/2
+[2024-02-02 05:13:55] Increasing target number of download connections to 6 (rate was 142.398, now 171.563)
+[2024-02-02 05:13:55] Created download interface of type 'SteamCache' (7) to host cache7-tyo3.steamcontent.com (cache7-tyo3.steamcontent.com)
+[2024-02-02 05:13:55] HTTPS (SteamCache,368) - cache7-tyo3.steamcontent.com ([2404:3fc0:a:100::a]:443 / [2404:3fc0:a:100::a]:443, host: cache7-tyo3.steamcontent.com): Negotiated HTTP/2
+[2024-02-02 05:14:07] Current download rate: 204.947 Mbps
+[2024-02-02 05:15:08] Current download rate: 156.932 Mbps
+[2024-02-02 05:16:09] Current download rate: 146.908 Mbps
+[2024-02-02 05:17:10] Current download rate: 137.594 Mbps
+[2024-02-02 05:17:54] Got 11 download sources and 0 caching proxies via ContentServerDirectoryService::BYieldingGetServersForSteamPipe (CellID 32 / Launcher 3)
+[2024-02-02 05:18:11] Current download rate: 65.371 Mbps
+[2024-02-02 05:18:24] stats: (SteamCache, 183) cache1-tyo3.steamcontent.com: 887291905 Bytes, 282 sec (25.16 Mbps). 1482 Hits / 0 Misses (100 %, 100 % bytes)
+[2024-02-02 05:18:24] stats: (Invalid, 0) : 5744501553 Bytes, 290 sec (158.43 Mbps). 7653 Hits / 7 Misses (100 %, 100 % bytes)
+[2024-02-02 05:18:24] stats: (SteamCache, 184) cache2-tyo3.steamcontent.com: 984574048 Bytes, 285 sec (27.68 Mbps). 1560 Hits / 0 Misses (100 %, 100 % bytes)
+[2024-02-02 05:18:24] stats: (SteamCache, 68) cache4-tyo3.steamcontent.com: 1118140480 Bytes, 285 sec (31.33 Mbps). 1706 Hits / 0 Misses (100 %, 100 % bytes)
+[2024-02-02 05:18:24] stats: (SteamCache, 369) cache8-tyo3.steamcontent.com: 710919952 Bytes, 274 sec (20.74 Mbps). 920 Hits / 0 Misses (100 %, 100 % bytes)
+[2024-02-02 05:18:24] stats: (SteamCache, 67) cache3-tyo3.steamcontent.com: 832180864 Bytes, 258 sec (25.79 Mbps). 811 Hits / 0 Misses (100 %, 100 % bytes)
+[2024-02-02 05:18:24] stats: (SteamCache, 368) cache7-tyo3.steamcontent.com: 1211394304 Bytes, 246 sec (39.33 Mbps). 1174 Hits / 7 Misses (99 %, 99 % bytes)
+[2024-02-02 05:18:43] ContentServerDirectoryService::BYieldingGetServersForSteamPipe failed (Transport Response Not Received / Result No Connection)
+[2024-02-02 05:18:43] Failed to get list of download sources
+[2024-02-02 05:18:44] IPv6 Connectivity state has changed, downgrading to ipv4-only
+[2024-02-02 05:18:53] ContentServerDirectoryService::BYieldingGetServersForSteamPipe failed (Transport Request Not Sent / Result No Connection)
+[2024-02-02 05:18:53] Failed to get list of download sources
+[2024-02-02 05:19:12] Current download rate: 0.000 Mbps
+[2024-02-02 05:19:28] HTTP/2 (SteamCache,184) - cache2-tyo3.steamcontent.com (0.0.0.0:443 / 0.0.0.0:443, host: cache2-tyo3.steamcontent.com): Received 0 (Invalid) HTTP response for depot 2430931
+[2024-02-02 05:19:28] HTTP/2 (SteamCache,184) - cache2-tyo3.steamcontent.com (0.0.0.0:443 / 0.0.0.0:443, host: cache2-tyo3.steamcontent.com): Closing connection
+[2024-02-02 05:19:28] stats: (SteamCache, 184) cache2-tyo3.steamcontent.com: 0 Bytes, 0 sec (0.00 Mbps). 1560 Hits / 0 Misses (100 %, 100 % bytes)
+[2024-02-02 05:19:28] Created download interface of type 'SteamCache' (7) to host cache5-tyo3.steamcontent.com (cache5-tyo3.steamcontent.com)
+[2024-02-02 05:19:34] ContentServerDirectoryService::BYieldingGetServersForSteamPipe failed (Transport Request Not Sent / Result No Connection)
+[2024-02-02 05:19:34] Failed to get list of download sources
+[2024-02-02 05:19:39] HTTP/2 (SteamCache,68) - cache4-tyo3.steamcontent.com (0.0.0.0:443 / 0.0.0.0:443, host: cache4-tyo3.steamcontent.com): Received 0 (Invalid) HTTP response for depot 2430931
+[2024-02-02 05:19:39] HTTP/2 (SteamCache,68) - cache4-tyo3.steamcontent.com (0.0.0.0:443 / 0.0.0.0:443, host: cache4-tyo3.steamcontent.com): Closing connection
+[2024-02-02 05:19:39] stats: (SteamCache, 68) cache4-tyo3.steamcontent.com: 0 Bytes, 0 sec (0.00 Mbps). 1706 Hits / 0 Misses (100 %, 100 % bytes)
+[2024-02-02 05:19:39] Created download interface of type 'SteamCache' (7) to host cache6-tyo3.steamcontent.com (cache6-tyo3.steamcontent.com)
+[2024-02-02 05:19:53] ContentServerDirectoryService::BYieldingGetServersForSteamPipe failed (Transport Request Not Sent / Result No Connection)
+[2024-02-02 05:19:53] Failed to get list of download sources
+[2024-02-02 05:19:55] HTTPS (SteamCache,93) - cache5-tyo3.steamcontent.com (45.121.184.40:443 / 45.121.184.40:443, host: cache5-tyo3.steamcontent.com): Negotiated HTTP/2
+[2024-02-02 05:19:55] HTTPS (SteamCache,94) - cache6-tyo3.steamcontent.com (45.121.184.41:443 / 45.121.184.41:443, host: cache6-tyo3.steamcontent.com): Negotiated HTTP/2
+[2024-02-02 05:20:08] AppID 2430930 config changed : added depots 1004,2430931
+[2024-02-02 05:20:13] Current download rate: 155.672 Mbps
+[2024-02-02 05:21:13] AppID 2430930 update changed : Running Update,
+[2024-02-02 05:21:13] AppID 2430930 update changed : Running Update,Verifying,
+[2024-02-02 05:21:14] Current download rate: 162.558 Mbps
+[2024-02-02 05:22:11] HTTP/2 (SteamCache,369) - cache8-tyo3.steamcontent.com (45.121.184.43:443 / 45.121.184.43:443, host: cache8-tyo3.steamcontent.com): Closing connection
+[2024-02-02 05:22:11] HTTP/2 (SteamCache,67) - cache3-tyo3.steamcontent.com (45.121.184.38:443 / 45.121.184.38:443, host: cache3-tyo3.steamcontent.com): Closing connection
+[2024-02-02 05:22:12] HTTP/2 (SteamCache,93) - cache5-tyo3.steamcontent.com (45.121.184.40:443 / 45.121.184.40:443, host: cache5-tyo3.steamcontent.com): Closing connection
+[2024-02-02 05:22:13] HTTP/2 (SteamCache,94) - cache6-tyo3.steamcontent.com (45.121.184.41:443 / 45.121.184.41:443, host: cache6-tyo3.steamcontent.com): Closing connection
+[2024-02-02 05:22:13] HTTP/2 (SteamCache,368) - cache7-tyo3.steamcontent.com (45.121.184.42:443 / 45.121.184.42:443, host: cache7-tyo3.steamcontent.com): Closing connection
+[2024-02-02 05:22:13] HTTP/2 (SteamCache,183) - cache1-tyo3.steamcontent.com (45.121.184.36:443 / 45.121.184.36:443, host: cache1-tyo3.steamcontent.com): Closing connection
+[2024-02-02 05:22:24] Got 11 download sources and 0 caching proxies via ContentServerDirectoryService::BYieldingGetServersForSteamPipe (CellID 32 / Launcher 3)
+[2024-02-02 05:22:54] Got 11 download sources and 0 caching proxies via ContentServerDirectoryService::BYieldingGetServersForSteamPipe (CellID 32 / Launcher 3)
+[2024-02-02 05:23:24] Got 11 download sources and 0 caching proxies via ContentServerDirectoryService::BYieldingGetServersForSteamPipe (CellID 32 / Launcher 3)
+[2024-02-02 05:23:45] stats: (SteamCache, 183) cache1-tyo3.steamcontent.com: 428645488 Bytes, 77 sec (44.51 Mbps). 1944 Hits / 0 Misses (100 %, 100 % bytes)
+[2024-02-02 05:23:45] stats: (Invalid, 0) : 1872792912 Bytes, 77 sec (194.31 Mbps). 9647 Hits / 29 Misses (100 %, 100 % bytes)
+[2024-02-02 05:23:45] stats: (SteamCache, 369) cache8-tyo3.steamcontent.com: 203289840 Bytes, 75 sec (21.68 Mbps). 1152 Hits / 0 Misses (100 %, 100 % bytes)
+[2024-02-02 05:23:45] stats: (SteamCache, 67) cache3-tyo3.steamcontent.com: 256654672 Bytes, 75 sec (27.24 Mbps). 1099 Hits / 0 Misses (100 %, 100 % bytes)
+[2024-02-02 05:23:45] stats: (SteamCache, 368) cache7-tyo3.steamcontent.com: 241765840 Bytes, 77 sec (25.16 Mbps). 1437 Hits / 9 Misses (99 %, 99 % bytes)
+[2024-02-02 05:23:45] stats: (SteamCache, 93) cache5-tyo3.steamcontent.com: 194063952 Bytes, 76 sec (20.45 Mbps). 181 Hits / 20 Misses (90 %, 90 % bytes)
+[2024-02-02 05:23:45] stats: (SteamCache, 94) cache6-tyo3.steamcontent.com: 548373120 Bytes, 77 sec (57.26 Mbps). 568 Hits / 0 Misses (100 %, 100 % bytes)
+[2024-02-02 05:23:54] Got 11 download sources and 0 caching proxies via ContentServerDirectoryService::BYieldingGetServersForSteamPipe (CellID 32 / Launcher 3)
+[2024-02-02 05:24:24] Got 11 download sources and 0 caching proxies via ContentServerDirectoryService::BYieldingGetServersForSteamPipe (CellID 32 / Launcher 3)
+[2024-02-02 05:24:46] Verified 9035 MB in 'F:\WorkSpase\project\ARK_Server_Manager\SteamCMD', clean bytes tally is now 9035 MB
+[2024-02-02 05:24:46] Triggered async write of Steam library folders configuration (1 libraries).
+[2024-02-02 05:24:46] AppID 2430930 update changed : Running Update,
+[2024-02-02 05:24:46] AppID 2430930 update changed : Running Update,Committing,
+[2024-02-02 05:24:46] AppID 2430930 starting commit from "f:\workspase\project\ark_server_manager\servers\tkbone\steamapps\downloading\2430930" to "f:\workspase\project\ark_server_manager\servers\tkbone" : 624 updated, 0 moved, 0 deleted files
+[2024-02-02 05:24:47] AppID 2430930 state changed : Fully Installed,Update Queued,Update Running,
+[2024-02-02 05:24:47] AppID 2430930 finished update, 2 mounted depots (BuildID 13329549) : 1004 (1923798258558304932),2430931 (122022057987947981),
+[2024-02-02 05:24:47] AppID 2430930 update changed : Running Update,
+[2024-02-02 05:24:47] AppID 2430930 update changed : None
+[2024-02-02 05:24:47] AppID 2430930 state changed : Fully Installed,Update Queued,
+[2024-02-02 05:24:47] AppID 2430930 state changed : Fully Installed,
+[2024-02-02 05:24:47] AppID 2430930 scheduler finished : removed from schedule (result No Error, state 0xc) 

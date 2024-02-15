@@ -1,0 +1,6 @@
+ABCDTF = new JTextField( 10 );
+Panel ABCDPanel = new Panel( ABCDTF, "" );
+
+ABCDCB = new JCheckBox( "" );
+Panel ABCDPanel = new Panel( ABCDCB, false );
+
